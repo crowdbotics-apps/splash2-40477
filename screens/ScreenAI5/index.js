@@ -1,3 +1,4 @@
+import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 
 const WelcomeScreen = () => {
