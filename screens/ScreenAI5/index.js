@@ -1,7 +1,7 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 
 const WelcomeScreen = () => {
-  return <ScrollView>
+  return <ScrollView style={styles.NIyTbkFC}>
     <View style={styles.container}>
       <View style={styles.logoContainer}>
         <Image source={require("./image 2.png")} style={styles.logo} />
@@ -94,6 +94,9 @@ const styles = StyleSheet.create({
     width: 317,
     height: 55,
     textAlign: "center"
+  },
+  NIyTbkFC: {
+    backgroundColor: "#FFFFFF"
   }
 });
 export default WelcomeScreen;
