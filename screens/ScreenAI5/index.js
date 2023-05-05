@@ -2,30 +2,30 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "rea
 
 const WelcomeScreen = () => {
   return <ScrollView style={styles.NIyTbkFC}>
-    <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image source={require("./image 2.png")} style={styles.logo} />
+      <View style={styles.container}>
+        <View style={styles.logoContainer}>
+          <Image source={require("./image 2.png")} style={styles.logo} />
+        </View>
+        <View style={styles.imageContainer}>
+          <Image source={require("./image 4 (1).png")} style={styles.image} />
+        </View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Welcome to Pettopia</Text>
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>
+            A world for Pets, Pet Parents and Pet Admirers alike
+          </Text>
+        </View>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Get started</Text>
+        </TouchableOpacity>
+        <View style={styles.funFactContainer}>
+          <Text style={styles.funFact}>
+            Fun fact: Creating an account will take roughly five to ten minutes
+          </Text>
+        </View>
       </View>
-      <View style={styles.imageContainer}>
-        <Image source={require("./image 4 (1).png")} style={styles.image} />
-      </View>
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>Welcome to Pettopia</Text>
-      </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>
-          A world for Pets, Pet Parents and Pet Admirers alike
-        </Text>
-      </View>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Get started</Text>
-      </TouchableOpacity>
-      <View style={styles.funFactContainer}>
-        <Text style={styles.funFact}>
-          Fun fact: Creating an account will take roughly five to ten minutes
-        </Text>
-      </View>
-    </View>
     </ScrollView>;
 };
 
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 50,
-    backgroundColor: "#f4511e",
+    backgroundColor: "#22B9B0",
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 30
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   NIyTbkFC: {
-    backgroundColor: "#FFFFFF"
+    backgroundColor: "#fff"
   }
 });
 export default WelcomeScreen;
