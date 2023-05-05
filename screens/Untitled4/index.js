@@ -1,14 +1,15 @@
 import { Text } from "react-native";
+import React from "react";
 import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
-const Untitled1 = () => {
+const Untitled4 = () => {
   return <SafeAreaView style={styles.safeArea}>
         <ScrollView contentContainerStyle={{
       backgroundColor: '#f0f0f1',
       padding: 10,
       position: 'relative',
       flex: 1
-    }}><Text style={styles.wcwRNnss}>{"This is my app home page"}</Text></ScrollView>
+    }}><Text style={styles.FWfyfvQK}>Lorem ipsum…</Text></ScrollView>
     </SafeAreaView>;
 };
 
@@ -16,14 +17,12 @@ const styles = StyleSheet.create({
   safeArea: {
     height: '100%'
   },
-  wcwRNnss: {
-    width: 335,
+  FWfyfvQK: {
+    width: 100,
     height: 50,
     lineHeight: 14,
     fontSize: 14,
-    borderRadius: 0,
-    fontWeight: "700",
-    textAlign: "center"
+    borderRadius: 0
   }
 });
-export default Untitled1;
+export default Untitled4;
