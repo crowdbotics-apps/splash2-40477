@@ -1,36 +1,40 @@
+import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, Image, StyleSheet, ScrollView, Pressable } from "react-native";
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
-  return <Pressable><ScrollView style={styles.NIyTbkFC}>
-      <View style={styles.container}>
-        <View style={styles.logoContainer}>
-          <Image source={require("./pettopia_logo.png")} style={styles.logo} />
-        </View>
-        <View style={styles.imageContainer}>
-          <Image source={require("./pettopia_dog_image.png")} style={styles.image} />
-        </View>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Welcome to Pettopia</Text>
-        </View>
-        <View style={styles.textContainer}>
-          <Text style={styles.text}>
-            A world for Pets, Pet Parents and Pet Admirers alike
-          </Text>
-        </View>
-        <Pressable style={styles.button} onPress={() => {
+  return <Pressable>
+      <ScrollView style={styles.NIyTbkFC}>
+        <View style={styles.container}>
+          <View style={styles.logoContainer}>
+            <Image source={require("./pettopia_logo.png")} style={styles.logo} />
+          </View>
+          <View style={styles.imageContainer}>
+            <Image source={require("./pettopia_dog_image.png")} style={styles.image} />
+          </View>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>Welcome to Pettopia</Text>
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.text}>
+              A world for Pets, Pet Parents and Pet Admirers alike
+            </Text>
+          </View>
+          <Pressable style={styles.button} onPress={() => {
           navigation.navigate("ScreenAI2");
         }}>
-          <Text style={styles.buttonText}>Get started</Text>
-        </Pressable>
-        <View style={styles.funFactContainer}>
-          <Text style={styles.funFact}>
-            Fun fact: Creating an account will take roughly five to ten minutes
-          </Text>
+            <Text style={styles.buttonText}>Get started</Text>
+          </Pressable>
+          <View style={styles.funFactContainer}>
+            <Text style={styles.funFact}>
+              Fun fact: Creating an account will take roughly five to ten
+              minutes
+            </Text>
+          </View>
         </View>
-      </View>
-    </ScrollView></Pressable>;
+      </ScrollView>
+    </Pressable>;
 };
 
 const styles = StyleSheet.create({

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from "react-native";
 
 const PetProfileScreen = () => {
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginLeft: 10,
     width: 120,
-    textAlign: 'center',
+    textAlign: "center",
     backgroundColor: "#22B9B0"
   },
   buttonText: {
