@@ -44,12 +44,12 @@ const PetProfileScreen = () => {
       </View>
       <View style={styles.footer}>
         <TouchableOpacity style={styles.button}>
-          <Image source={require("../assets/left-arrow.png")} style={styles.buttonIcon} />
+          <Image source={require("./left_arrow.png")} style={styles.buttonIcon} />
           <Text style={styles.buttonText}>Back</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Next</Text>
-          <Image source={require("../assets/right-arrow.png")} style={styles.buttonIcon} />
+          <Image source={require("./right_arrow.png")} style={styles.buttonIcon} />
         </TouchableOpacity>
       </View>
       <View style={styles.bottomLine} />
@@ -132,14 +132,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 20,
-    backgroundColor: "#22B9B0"
+    paddingHorizontal: 20
   },
   button: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginLeft: 10
+    marginLeft: 10,
+    width: 120,
+    textAlign: 'center',
+    backgroundColor: "#22B9B0"
   },
   buttonText: {
     color: "#FFFFFF",
