@@ -1,14 +1,13 @@
-import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 
 const WelcomeScreen = () => {
   return <ScrollView style={styles.NIyTbkFC}>
       <View style={styles.container}>
         <View style={styles.logoContainer}>
-          <Image source={require("./image 2.png")} style={styles.logo} />
+          <Image source={require("./pettopia_logo.png")} style={styles.logo} />
         </View>
         <View style={styles.imageContainer}>
-          <Image source={require("./image 4 (1).png")} style={styles.image} />
+          <Image source={require("./pettopia_dog_image.png")} style={styles.image} />
         </View>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Welcome to Pettopia</Text>
