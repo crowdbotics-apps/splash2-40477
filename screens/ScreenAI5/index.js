@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import React from "react";
+import { View, Text, Image, StyleSheet, ScrollView, Pressable } from "react-native";
 
 const WelcomeScreen = () => {
-  return <ScrollView style={styles.NIyTbkFC}>
+  return <Pressable><ScrollView style={styles.NIyTbkFC}>
       <View style={styles.container}>
         <View style={styles.logoContainer}>
           <Image source={require("./pettopia_logo.png")} style={styles.logo} />
@@ -18,16 +18,16 @@ const WelcomeScreen = () => {
             A world for Pets, Pet Parents and Pet Admirers alike
           </Text>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <Pressable style={styles.button}>
           <Text style={styles.buttonText}>Get started</Text>
-        </TouchableOpacity>
+        </Pressable>
         <View style={styles.funFactContainer}>
           <Text style={styles.funFact}>
             Fun fact: Creating an account will take roughly five to ten minutes
           </Text>
         </View>
       </View>
-    </ScrollView>;
+    </ScrollView></Pressable>;
 };
 
 const styles = StyleSheet.create({
