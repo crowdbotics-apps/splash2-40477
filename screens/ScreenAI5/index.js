@@ -1,7 +1,8 @@
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { View, Text, Image, StyleSheet, ScrollView, Pressable } from "react-native";
 
 const WelcomeScreen = () => {
+  const navigation = useNavigation();
   return <Pressable><ScrollView style={styles.NIyTbkFC}>
       <View style={styles.container}>
         <View style={styles.logoContainer}>
@@ -18,7 +19,9 @@ const WelcomeScreen = () => {
             A world for Pets, Pet Parents and Pet Admirers alike
           </Text>
         </View>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={() => {
+          navigation.navigate("ScreenAI2");
+        }}>
           <Text style={styles.buttonText}>Get started</Text>
         </Pressable>
         <View style={styles.funFactContainer}>
