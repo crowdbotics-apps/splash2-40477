@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const PetProfileScreen = () => {
@@ -10,22 +10,22 @@ const PetProfileScreen = () => {
 
   return <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require('../assets/pettopia-logo.png')} style={styles.logo} />
+        <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
       <View style={styles.content}>
         <Text style={styles.title}>Number of pets</Text>
         <Text style={styles.subtitle}>How many pets will you create profiles for? This will be important to help you set up the profile properly</Text>
         <View style={styles.optionsContainer}>
           <TouchableOpacity style={[styles.option, selected === 'one' && styles.selectedOption]} onPress={() => handleSelection('one')}>
-            <Image source={require('../assets/pet1.png')} style={styles.petImage} />
+            <Image source={require("./pet_image_col_1.png")} style={styles.petImage} />
             <Text style={styles.optionText}>One pet</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.option, selected === 'two' && styles.selectedOption]} onPress={() => handleSelection('two')}>
-            <Image source={require('../assets/pet2.png')} style={styles.petImage} />
+            <Image source={require("./pet_image_col_2.png")} style={styles.petImage} />
             <Text style={styles.optionText}>Two pets</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.option, selected === 'three' && styles.selectedOption]} onPress={() => handleSelection('three')}>
-            <Image source={require('../assets/pet3.png')} style={styles.petImage} />
+            <Image source={require("./pet_image_col_3.png")} style={styles.petImage} />
             <Text style={styles.optionText}>Three pets</Text>
           </TouchableOpacity>
         </View>
@@ -33,12 +33,12 @@ const PetProfileScreen = () => {
         <Text style={styles.funFact}>Fun fact: You'll be able to create additional profiles afterwards, as desired.</Text>
         <View style={styles.buttonsContainer}>
           <TouchableOpacity style={styles.backButton}>
-            <Image source={require('../assets/left-arrow.png')} style={styles.arrow} />
+            <Image source={require("./left_arrow.png")} style={styles.arrow} />
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.nextButton}>
             <Text style={styles.buttonText}>Next</Text>
-            <Image source={require('../assets/right-arrow.png')} style={styles.arrow} />
+            <Image source={require("./right_arrow.png")} style={styles.arrow} />
           </TouchableOpacity>
         </View>
       </View>
