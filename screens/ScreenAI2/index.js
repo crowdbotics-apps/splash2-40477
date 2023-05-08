@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable } from "react-native";
 
 const PetProfileScreen = () => {
+  const navigation = useNavigation();
   const [petParentSelected, setPetParentSelected] = useState(false);
   const [petGuardianSelected, setPetGuardianSelected] = useState(false);
 
@@ -47,7 +49,9 @@ const PetProfileScreen = () => {
           <Image source={require("./left_arrow.png")} style={styles.buttonIcon} />
           <Text style={styles.buttonText}>Back</Text>
         </TouchableOpacity>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={() => {
+        navigation.navigate("ScreenAI3");
+      }}>
           <Text style={styles.buttonText}>Next</Text>
           <Image source={require("./right_arrow.png")} style={styles.buttonIcon} />
         </Pressable>
