@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 const PetProfileScreen = () => {
@@ -68,20 +68,21 @@ const styles = StyleSheet.create({
     borderBottomColor: "#ccc"
   },
   logo: {
-    width: 150,
-    height: 50,
-    resizeMode: "contain"
+    width: 180,
+    height: 45
   },
   content: {
     flex: 1,
     padding: 20,
+    paddingTop: 40,
     justifyContent: "center",
     alignItems: "center"
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 10
+    marginBottom: 10,
+    marginTop: 60
   },
   subtitle: {
     fontSize: 16,

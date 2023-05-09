@@ -69,7 +69,9 @@ const styles = StyleSheet.create({
     height: 80,
     backgroundColor: "#FFFFFF",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    borderBottomWidth: 1,
+    borderBottomColor: "#ccc"
   },
   logo: {
     width: 180,
@@ -111,8 +113,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5B56D"
   },
   profileTypeImage: {
-    width: 120,
-    height: 250,
+    width: 110,
+    height: 254,
     marginBottom: 10,
     left: 3
   },
