@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable } from "react-native";
 
@@ -34,7 +34,7 @@ const PetProfileScreen = () => {
           <TouchableOpacity style={[styles.profileTypeBox, petGuardianSelected && styles.selectedProfileTypeBox]} onPress={handlePetGuardianPress}>
             <Image source={require("./pettopia_profile_right.png")} style={styles.profileTypeImage} />
             <View>
-              <Image source={require("./paw_icon.png")} style={styles.pawImage} />
+              <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
               <Text style={styles.profileTypeText}>Pet Guardian</Text>
             </View>
             
@@ -130,7 +130,9 @@ const styles = StyleSheet.create({
   },
   pawImage: {
     height: 42,
-    width: 42
+    width: 42,
+    position: "absolute",
+    left: 29
   },
   description: {
     fontSize: 16,
