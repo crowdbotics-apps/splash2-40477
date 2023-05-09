@@ -46,14 +46,14 @@ const PetProfileScreen = () => {
       </View>
       <View style={styles.footer}>
         <TouchableOpacity style={styles.button}>
-          <Image source={require("./left_arrow.png")} style={styles.buttonIcon} />
+          <Image source={require("./left_arrow.png")} style={styles.buttonIconLeft} />
           <Text style={styles.buttonText}>Back</Text>
         </TouchableOpacity>
         <Pressable style={styles.button} onPress={() => {
         navigation.navigate("ScreenAI3");
       }}>
           <Text style={styles.buttonText}>Next</Text>
-          <Image source={require("./right_arrow.png")} style={styles.buttonIcon} />
+          <Image source={require("./right_arrow.png")} style={styles.buttonIconRight} />
         </Pressable>
       </View>
       <View style={styles.bottomLine} />
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     marginTop: 60,
-    textAlign: 'center'
+    textAlign: "center"
   },
   funFact: {
     fontSize: 14,
@@ -161,7 +161,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginHorizontal: 10
   },
-  buttonIcon: {
+  buttonIconLeft: {
+    width: 20,
+    height: 20
+  },
+  buttonIconRight: {
     width: 20,
     height: 20
   },
