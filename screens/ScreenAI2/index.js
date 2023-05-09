@@ -163,11 +163,15 @@ const styles = StyleSheet.create({
   },
   buttonIconLeft: {
     width: 20,
-    height: 20
+    height: 20,
+    position: "absolute",
+    left: 12
   },
   buttonIconRight: {
     width: 20,
-    height: 20
+    height: 20,
+    position: "absolute",
+    left: 98
   },
   bottomLine: {
     height: 1,
