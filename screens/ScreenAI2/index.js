@@ -114,10 +114,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5B56D"
   },
   profileTypeImage: {
-    width: 110,
-    height: 254,
+    width: 150,
+    height: 240,
     marginBottom: 10,
-    left: 3
+    borderRadius: 10,
+    marginTop: -68
   },
   profileTypeText: {
     fontSize: 16,
