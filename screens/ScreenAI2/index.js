@@ -162,14 +162,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 10
   },
   buttonIconLeft: {
-    width: 20,
-    height: 20,
+    width: 14,
+    height: 14,
     position: "absolute",
-    left: 12
+    left: 12,
+    top: 14
   },
   buttonIconRight: {
-    width: 20,
-    height: 20,
+    width: 14,
+    height: 14,
     position: "absolute",
     left: 98
   },
