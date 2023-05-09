@@ -91,8 +91,9 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 16,
-    marginBottom: 20,
-    textAlign: "center"
+    marginBottom: 38,
+    textAlign: "center",
+    marginTop: 14
   },
   profileTypeContainer: {
     flexDirection: "row",
@@ -126,12 +127,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     marginBottom: 10,
-    marginTop: 60
+    marginTop: 60,
+    textAlign: 'center'
   },
   funFact: {
     fontSize: 14,
     fontStyle: "italic",
-    marginBottom: 20
+    marginBottom: 20,
+    marginTop: 24,
+    textAlign: "center"
   },
   footer: {
     height: 60,
@@ -145,13 +149,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginLeft: 10,
-    width: 120,
+    width: 130,
     textAlign: "center",
-    backgroundColor: "#22B9B0"
+    backgroundColor: "#22B9B0",
+    padding: 12,
+    borderRadius: 12
   },
   buttonText: {
     color: "#FFFFFF",
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
     marginHorizontal: 10
   },
