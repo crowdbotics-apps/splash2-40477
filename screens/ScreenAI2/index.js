@@ -29,7 +29,10 @@ const PetProfileScreen = () => {
         <View style={styles.profileTypeContainer}>
           <TouchableOpacity style={[styles.profileTypeBox, petParentSelected && styles.selectedProfileTypeBox]} onPress={handlePetParentPress}>
             <Image source={require("./pettopia_profile_left.png")} style={styles.profileTypeImage} />
-            <Text style={styles.profileTypeText}>Pet parent</Text>
+            <View>
+              <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
+              <Text style={styles.profileTypeText}>Pet Guardian</Text>
+            </View>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.profileTypeBox, petGuardianSelected && styles.selectedProfileTypeBox]} onPress={handlePetGuardianPress}>
             <Image source={require("./pettopia_profile_right.png")} style={styles.profileTypeImage} />
@@ -37,7 +40,6 @@ const PetProfileScreen = () => {
               <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
               <Text style={styles.profileTypeText}>Pet Guardian</Text>
             </View>
-            
           </TouchableOpacity>
         </View>
         <Text style={styles.description}>
@@ -129,10 +131,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   pawImage: {
-    height: 42,
-    width: 42,
-    position: "absolute",
-    left: 29
+    height: 24,
+    width: 28,
+    marginLeft: 34,
+    marginBottom: 12,
+    marginTop: 12
   },
   description: {
     fontSize: 16,
