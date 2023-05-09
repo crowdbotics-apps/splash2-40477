@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     width: 14,
     height: 14,
     position: "absolute",
-    left: 98
+    left: 104
   },
   bottomLine: {
     height: 1,
