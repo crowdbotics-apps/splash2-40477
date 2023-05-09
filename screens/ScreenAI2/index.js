@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingTop: 40,
+    paddingTop: 20,
     paddingBottom: 20
   },
   title: {
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   },
   selectedProfileTypeBox: {
     backgroundColor: "#F5B56D",
-    color: '#fff'
+    color: "#fff"
   },
   profileTypeImage: {
     width: 150,
