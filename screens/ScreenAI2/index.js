@@ -114,15 +114,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#F2F2F2",
     borderRadius: 10,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginTop: 32
   },
   selectedProfileTypeBox: {
-    backgroundColor: "#F5B56D"
+    backgroundColor: "#F5B56D",
+    color: '#fff'
   },
   profileTypeImage: {
     width: 150,
     height: 240,
-    marginBottom: 10,
     borderRadius: 10,
     marginTop: -68
   },
@@ -135,13 +136,13 @@ const styles = StyleSheet.create({
     width: 28,
     marginLeft: 34,
     marginBottom: 12,
-    marginTop: 12
+    marginTop: 32
   },
   description: {
     fontSize: 16,
     fontWeight: "bold",
     marginBottom: 10,
-    marginTop: 60,
+    marginTop: 90,
     textAlign: "center"
   },
   funFact: {
