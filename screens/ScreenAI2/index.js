@@ -33,7 +33,11 @@ const PetProfileScreen = () => {
           </TouchableOpacity>
           <TouchableOpacity style={[styles.profileTypeBox, petGuardianSelected && styles.selectedProfileTypeBox]} onPress={handlePetGuardianPress}>
             <Image source={require("./pettopia_profile_right.png")} style={styles.profileTypeImage} />
-            <Text style={styles.profileTypeText}>Pet Guardian</Text>
+            <View>
+              <Image source={require("./paw_icon.png")} style={styles.pawImage} />
+              <Text style={styles.profileTypeText}>Pet Guardian</Text>
+            </View>
+            
           </TouchableOpacity>
         </View>
         <Text style={styles.description}>
@@ -123,6 +127,10 @@ const styles = StyleSheet.create({
   profileTypeText: {
     fontSize: 16,
     fontWeight: "bold"
+  },
+  pawImage: {
+    height: 42,
+    width: 42
   },
   description: {
     fontSize: 16,
