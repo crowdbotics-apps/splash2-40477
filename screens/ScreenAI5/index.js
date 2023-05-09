@@ -55,8 +55,9 @@ const styles = StyleSheet.create({
     marginTop: 50
   },
   image: {
-    width: 300,
-    height: 300
+    width: 250,
+    height: 320,
+    borderRadius: 50
   },
   titleContainer: {
     marginTop: 50
