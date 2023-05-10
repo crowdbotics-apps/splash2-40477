@@ -1,6 +1,10 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, Image, StyleSheet, ScrollView, Pressable } from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView, Pressable, Dimensions } from "react-native";
+const {
+  width,
+  height
+} = Dimensions.get("window");
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
@@ -14,7 +18,7 @@ const WelcomeScreen = () => {
             <Image source={require("./pettopia_dog_image.png")} style={styles.image} />
           </View>
           <View style={styles.titleContainer}>
-            <Text style={styles.title}>Welcome to Pettopia</Text>
+            <Text style={styles.title}>Welcome to PetTopia</Text>
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.text}>
@@ -60,27 +64,23 @@ const styles = StyleSheet.create({
     borderRadius: 50
   },
   titleContainer: {
-    marginTop: 50
+    marginTop: height * 0.02,
+    width: "100%",
+    alignItems: "center"
   },
   title: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: "#333",
-    width: 291,
-    height: 50
+    fontSize: width * 0.011,
+    color: "#333"
   },
   textContainer: {
-    marginTop: 20
+    marginTop: height * 0.012,
+    width: '100%',
+    paddingHorizontal: width * 0.02
   },
   text: {
-    fontSize: 20,
-    color: "#666",
-    position: "absolute",
-    left: -142,
-    top: -18,
-    textAlign: "center",
-    width: 280,
-    height: 60
+    fontSize: height * 0.01,
+    color: "#797979",
+    textAlign: 'center'
   },
   button: {
     marginTop: 50,
