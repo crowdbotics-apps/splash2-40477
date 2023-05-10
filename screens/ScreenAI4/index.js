@@ -14,10 +14,10 @@ const PetSelectionScreen = ({
   const dispatch = useDispatch();
   const [pets, setPets] = useState([{
     id: 1,
-    name: 'bird'
+    name: "bird"
   }, {
     id: 2,
-    name: 'pig'
+    name: "pig"
   }]);
   const [selectedPet, setSelectedPet] = useState(null);
   useEffect(() => {
@@ -60,9 +60,7 @@ const PetSelectionScreen = ({
           <TouchableOpacity style={_styles.yDmVblik} onPress={() => navigation.goBack()}>
             <Text style={_styles.kXBxkThh}>Back</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={_styles.pfoxdPqW} onPress={() => navigation.navigate("PetDetails", {
-          pet: selectedPet
-        })} disabled={!selectedPet}>
+          <TouchableOpacity style={_styles.pfoxdPqW} disabled={!selectedPet}>
             <Text style={_styles.ToRosxGm}>Next</Text>
           </TouchableOpacity>
         </View>
