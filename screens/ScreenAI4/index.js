@@ -51,7 +51,7 @@ const PetSelectionScreen = ({
         <Text style={_styles.bDkXbCdu}>
           Now it’s time to choose what type of pet the profile will be for
         </Text>
-        <FlatList data={PetCategories} renderItem={renderItem} keyExtractor={item => item.id.toString()} style={_styles.BEmHibWx} />
+        <FlatList data={PetCategories} renderItem={renderItem} keyExtractor={item => item.name} style={_styles.BEmHibWx} />
         <Text style={_styles.UsbfGyIr}>
           Fun fact: You'll be able to create additional profiles afterwards, as
           desired
