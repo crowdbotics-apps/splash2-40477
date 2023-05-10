@@ -89,8 +89,8 @@ const _styles = StyleSheet.create({
     paddingVertical: 20
   },
   cfazrJtM: {
-    width: 150,
-    height: 50
+    width: 180,
+    height: 40
   },
   OadbPAoG: {
     borderBottomWidth: 1,
