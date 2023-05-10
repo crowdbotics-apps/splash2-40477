@@ -38,7 +38,7 @@ const PetSelectionScreen = ({
     borderRadius: 10,
     marginVertical: 5
   }} onPress={() => handlePetSelection(item)}>
-      <Text style={_styles.gicwGhmK}>{item.name}</Text>
+      <Text style={_styles.gicwGhmK}>{item?.name}</Text>
     </TouchableOpacity>;
 
   return <View style={_styles.myNzMFVz}>
