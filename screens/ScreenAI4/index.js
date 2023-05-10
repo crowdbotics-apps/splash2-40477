@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
@@ -36,7 +36,7 @@ const PetSelectionScreen = ({
 
   return <View style={_styles.myNzMFVz}>
       <View style={_styles.NVslVSfO}>
-        <Image source={require("../assets/pettopia-logo.png")} style={_styles.cfazrJtM} />
+        <Image source={require("./pettopia_logo.png")} style={_styles.cfazrJtM} />
       </View>
       <View style={_styles.OadbPAoG} />
       <View style={_styles.aSXqtQcC}>
