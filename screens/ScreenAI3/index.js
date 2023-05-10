@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable } from "react-native";
 
 const PetProfileScreen = () => {
+  const navigation = useNavigation();
   const [selected, setSelected] = useState("");
 
   const handleSelection = option => {
@@ -44,7 +46,9 @@ const PetProfileScreen = () => {
             <Image source={require("./left_arrow.png")} style={styles.arrow} />
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
-          <Pressable style={styles.nextButton}>
+          <Pressable style={styles.nextButton} onPress={() => {
+          navigation.navigate("ScreenAI4");
+        }}>
             <Text style={styles.buttonText}>Next</Text>
             <Image source={require("./right_arrow.png")} style={styles.arrow} />
           </Pressable>
