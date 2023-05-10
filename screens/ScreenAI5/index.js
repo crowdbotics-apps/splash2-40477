@@ -49,19 +49,22 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   logoContainer: {
-    marginTop: 50
+    marginTop: height * 0.024,
+    width: "100%",
+    height: height * 0.024,
+    alignItems: "center"
   },
   logo: {
-    width: 187,
-    height: 46
+    width: height * 0.12,
+    height: height * 0.024
   },
   imageContainer: {
-    marginTop: 50
+    marginTop: height * 0.024
   },
   image: {
-    width: 250,
-    height: 320,
-    borderRadius: 50
+    width: width * 0.12,
+    height: width * 0.16,
+    borderRadius: width * 0.02
   },
   titleContainer: {
     marginTop: height * 0.02,
@@ -74,13 +77,13 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     marginTop: height * 0.012,
-    width: '100%',
+    width: "100%",
     paddingHorizontal: width * 0.02
   },
   text: {
     fontSize: height * 0.01,
     color: "#797979",
-    textAlign: 'center'
+    textAlign: "center"
   },
   button: {
     marginTop: 50,
