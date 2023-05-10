@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable } from "react-native";
 
 const PetProfileScreen = () => {
   const [selected, setSelected] = useState("");
@@ -44,10 +44,10 @@ const PetProfileScreen = () => {
             <Image source={require("./left_arrow.png")} style={styles.arrow} />
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.nextButton}>
+          <Pressable style={styles.nextButton}>
             <Text style={styles.buttonText}>Next</Text>
             <Image source={require("./right_arrow.png")} style={styles.arrow} />
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </View>
       <View style={styles.footer} />
