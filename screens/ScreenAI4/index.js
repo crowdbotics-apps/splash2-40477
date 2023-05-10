@@ -1,5 +1,6 @@
 import { api_v1_petcategory_list } from "../../store/splashAPI/petCategories.slice.js";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
@@ -7,6 +8,9 @@ import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 const PetSelectionScreen = ({
   navigation
 }) => {
+  const {
+    entities: PetCategories
+  } = useSelector(state => state.PetCategories);
   const dispatch = useDispatch();
   const [pets, setPets] = useState([{
     id: 1,
@@ -47,7 +51,7 @@ const PetSelectionScreen = ({
         <Text style={_styles.bDkXbCdu}>
           Now it’s time to choose what type of pet the profile will be for
         </Text>
-        <FlatList data={pets} renderItem={renderItem} keyExtractor={item => item.id.toString()} style={_styles.BEmHibWx} />
+        <FlatList data={PetCategories} renderItem={renderItem} keyExtractor={item => item.id.toString()} style={_styles.BEmHibWx} />
         <Text style={_styles.UsbfGyIr}>
           Fun fact: You'll be able to create additional profiles afterwards, as
           desired
