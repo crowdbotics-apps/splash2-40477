@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { api_v1_petcategory_list } from "../../store/splashAPI/petCategories.slice.js";
-import { useDispatch } from "react-redux";
 import { StyleSheet } from "react-native";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 
 const PetSelectionScreen = ({
   navigation
 }) => {
-  const {
-    entities: console
-  } = useSelector(state => state.console);
-  const dispatch = useDispatch();
   const [pets, setPets] = useState([{
     id: 1,
     name: "bird"
@@ -20,9 +13,7 @@ const PetSelectionScreen = ({
     name: "pig"
   }]);
   const [selectedPet, setSelectedPet] = useState(null);
-  useEffect(() => {
-    dispatch(api_v1_petcategory_list());
-  }, []);
+  useEffect(() => {}, []);
 
   const handlePetSelection = pet => {
     setSelectedPet(pet);
