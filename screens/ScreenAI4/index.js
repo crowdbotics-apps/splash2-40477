@@ -1,3 +1,6 @@
+import { useSelector } from "react-redux";
+import { api_v1_petcategory_list } from "../../store/splashAPI/petCategories.slice.js";
+import { useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
@@ -6,10 +9,15 @@ import axios from "axios";
 const PetSelectionScreen = ({
   navigation
 }) => {
+  const {
+    entities: console
+  } = useSelector(state => state.console);
+  const dispatch = useDispatch();
   const [pets, setPets] = useState([]);
   const [selectedPet, setSelectedPet] = useState(null);
   useEffect(() => {
     axios.get("https://api.example.com/pets").then(response => setPets(response.data)).catch(error => console.log(error));
+    dispatch(api_v1_petcategory_list());
   }, []);
 
   const handlePetSelection = pet => {
