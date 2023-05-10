@@ -4,7 +4,6 @@ import { api_v1_petcategory_list } from "../../store/splashAPI/petCategories.sli
 import { useDispatch } from "react-redux";
 import { StyleSheet } from "react-native";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
-import axios from "axios";
 
 const PetSelectionScreen = ({
   navigation
@@ -16,7 +15,6 @@ const PetSelectionScreen = ({
   const [pets, setPets] = useState([]);
   const [selectedPet, setSelectedPet] = useState(null);
   useEffect(() => {
-    axios.get("https://api.example.com/pets").then(response => setPets(response.data)).catch(error => console.log(error));
     dispatch(api_v1_petcategory_list());
   }, []);
 
@@ -34,9 +32,6 @@ const PetSelectionScreen = ({
     borderRadius: 10,
     marginVertical: 5
   }} onPress={() => handlePetSelection(item)}>
-      <Image source={{
-      uri: item.image
-    }} style={_styles.ZyFzdOvx} />
       <Text style={_styles.gicwGhmK}>{item.name}</Text>
     </TouchableOpacity>;
 
