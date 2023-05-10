@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable } from "react-native";
 
 const PetProfileScreen = () => {
