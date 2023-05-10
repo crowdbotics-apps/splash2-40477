@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import axios from "axios";
 
 const PetSelectionScreen = ({
@@ -27,7 +26,6 @@ const PetSelectionScreen = ({
     borderRadius: 10,
     marginVertical: 5
   }} onPress={() => handlePetSelection(item)}>
-      <Ionicons name="paw-outline" size={24} color="black" style={_styles.eODCQCzz} />
       <Image source={{
       uri: item.image
     }} style={_styles.ZyFzdOvx} />
@@ -51,14 +49,12 @@ const PetSelectionScreen = ({
         </Text>
         <View style={_styles.lhlhLGKf}>
           <TouchableOpacity style={_styles.yDmVblik} onPress={() => navigation.goBack()}>
-            <Ionicons name="arrow-back-outline" size={24} color="#fff" style={_styles.CXEKmRjP} />
             <Text style={_styles.kXBxkThh}>Back</Text>
           </TouchableOpacity>
           <TouchableOpacity style={_styles.pfoxdPqW} onPress={() => navigation.navigate("PetDetails", {
           pet: selectedPet
         })} disabled={!selectedPet}>
             <Text style={_styles.ToRosxGm}>Next</Text>
-            <Ionicons name="arrow-forward-outline" size={24} color="#fff" style={_styles.fFEbYtSd} />
           </TouchableOpacity>
         </View>
       </View>
