@@ -49,39 +49,39 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   logoContainer: {
-    marginTop: height * 0.024,
+    marginTop: height * 0.024 * 5,
     width: "100%",
-    height: height * 0.024,
+    height: height * 0.024 * 5,
     alignItems: "center"
   },
   logo: {
-    width: height * 0.12,
-    height: height * 0.024
+    width: height * 0.12 * 5,
+    height: height * 0.024 * 5
   },
   imageContainer: {
-    marginTop: height * 0.024
+    marginTop: height * 0.024 * 5
   },
   image: {
-    width: width * 0.12,
-    height: width * 0.16,
-    borderRadius: width * 0.02
+    width: width * 0.12 * 5,
+    height: width * 0.16 * 5,
+    borderRadius: width * 0.02 * 5
   },
   titleContainer: {
-    marginTop: height * 0.02,
+    marginTop: height * 0.02 * 5,
     width: "100%",
     alignItems: "center"
   },
   title: {
-    fontSize: width * 0.011,
+    fontSize: width * 0.011 * 5,
     color: "#333"
   },
   textContainer: {
-    marginTop: height * 0.012,
+    marginTop: height * 0.012 * 5,
     width: "100%",
-    paddingHorizontal: width * 0.02
+    paddingHorizontal: width * 0.02 * 5
   },
   text: {
-    fontSize: height * 0.01,
+    fontSize: height * 0.01 * 5,
     color: "#797979",
     textAlign: "center"
   },
