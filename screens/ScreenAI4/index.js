@@ -103,11 +103,14 @@ const _styles = StyleSheet.create({
   CEnpePJQ: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 10
+    marginBottom: 10,
+    textAlign: "center"
   },
   bDkXbCdu: {
     fontSize: 16,
-    marginBottom: 20
+    marginBottom: 20,
+    textAlign: "center",
+    top: 0
   },
   BEmHibWx: {
     marginBottom: 20
