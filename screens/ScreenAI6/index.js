@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, TextInput, Picker, ScrollView } from "react-native";
 
 const PetRegistrationScreen = () => {
@@ -10,19 +10,19 @@ const PetRegistrationScreen = () => {
   const [petDOB, setPetDOB] = useState(new Date());
   const petOptions = [{
     id: 1,
-    image: 'pet1'
+    image: "pet1"
   }, {
     id: 2,
-    image: 'pet2'
+    image: "pet2"
   }, {
     id: 3,
-    image: 'pet3'
+    image: "pet3"
   }, {
     id: 4,
-    image: 'pet4'
+    image: "pet4"
   }, {
     id: 5,
-    image: 'pet5'
+    image: "pet5"
   }];
 
   const handlePetSelection = pet => {
