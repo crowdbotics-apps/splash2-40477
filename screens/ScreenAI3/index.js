@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable, ScrollView } from "react-native";
 
 const PetProfileScreen = () => {
   const navigation = useNavigation();
@@ -10,7 +10,7 @@ const PetProfileScreen = () => {
     setSelected(option);
   };
 
-  return <View style={styles.container}>
+  return <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
@@ -55,7 +55,7 @@ const PetProfileScreen = () => {
         </View>
       </View>
       <View style={styles.footer} />
-    </View>;
+    </ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -85,8 +85,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 20,
-    marginTop: 30
+    marginBottom: 20
   },
   subtitle: {
     fontSize: 16,
@@ -127,7 +126,8 @@ const styles = StyleSheet.create({
   selectedText: {
     fontSize: 16,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginBottom: 20,
+    marginTop: 20,
     textAlign: "center"
   },
   funFact: {
