@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, TextInput, Picker, ScrollView } from "react-native";
 
 const PetRegistrationScreen = () => {
@@ -37,7 +37,7 @@ const PetRegistrationScreen = () => {
 
   return <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("../assets/pettopia-logo.png")} style={styles.logo} />
+        <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
       <View style={styles.petSelection}>
         {petOptions.map(pet => <TouchableOpacity key={pet.id} onPress={() => handlePetSelection(pet)}>
