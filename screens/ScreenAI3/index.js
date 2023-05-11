@@ -85,13 +85,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 10,
-    marginTop: 60
+    marginBottom: 20,
+    marginTop: 30
   },
   subtitle: {
     fontSize: 16,
     textAlign: "center",
-    marginBottom: 20
+    marginBottom: 20,
+    paddingTop: 10
   },
   optionsContainer: {
     flexDirection: "row",
