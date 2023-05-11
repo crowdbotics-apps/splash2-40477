@@ -8,118 +8,40 @@ const {
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
-  return <Pressable>
-
-      <ScrollView style={styles.NIyTbkFC}>
-
+  return <ScrollView style={styles.NIyTbkFC}>
         <View style={styles.container}>
-
           <View style={styles.logoContainer}>
-
             <Image source={require("./pettopia_logo.png")} style={styles.logo} />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </View>
 
           <View style={styles.imageContainer}>
-
             <Image source={require("./pettopia_dog_image.png")} style={styles.image} />
-
-
           </View>
 
           <View style={styles.titleContainer}>
-
             <Text style={styles.title}>Welcome to PetTopia</Text>
-
-
-
-
-
-
-
           </View>
 
           <View style={styles.textContainer}>
-
             <Text style={styles.text}>
-
               A world for Pets, Pet Parents and Pet Admirers alike
-
             </Text>
-
-
-
-
           </View>
 
           <Pressable style={styles.button} onPress={() => {
-          navigation.navigate("ScreenAI2");
-        }}>
-
+        navigation.navigate("ScreenAI2");
+      }}>
             <Text style={styles.buttonText}>Get started</Text>
-
           </Pressable>
 
           <View style={styles.funFactContainer}>
-
             <Text style={styles.funFact}>
-
               Fun fact: Creating an account will take roughly five to ten
-
               minutes
-
             </Text>
-
           </View>
-
         </View>
-
-      </ScrollView>
-
-    </Pressable>;
+      </ScrollView>;
 };
 
 const styles = StyleSheet.create({
