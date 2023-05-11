@@ -23,15 +23,15 @@ const PetProfileScreen = () => {
         <View style={styles.optionsContainer}>
           <TouchableOpacity style={[styles.option, selected === "one" && styles.selectedOption]} onPress={() => handleSelection("one")}>
             <Image source={require("./pet_qtde_column_1.png")} style={styles.petImage} />
-            <Text style={styles.optionText}>One pet</Text>
+            <Text style={styles.optionText}>ONE PET</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.option, selected === "two" && styles.selectedOption]} onPress={() => handleSelection("two")}>
             <Image source={require("./pet_image_col_2.png")} style={styles.petImage} />
-            <Text style={styles.optionText}>Two pets</Text>
+            <Text style={styles.optionText}>TWO PETS</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.option, selected === "three" && styles.selectedOption]} onPress={() => handleSelection("three")}>
             <Image source={require("./pet_image_col_3.png")} style={styles.petImage} />
-            <Text style={styles.optionText}>Three pets</Text>
+            <Text style={styles.optionText}>THREE PETS</Text>
           </TouchableOpacity>
         </View>
         <Text style={styles.selectedText}>
@@ -113,14 +113,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5b56d"
   },
   petImage: {
-    width: '100%',
+    width: "100%",
     height: 150,
     marginBottom: 10,
     borderRadius: 10,
     marginTop: -72
   },
   optionText: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
     textAlign: "center"
   },
