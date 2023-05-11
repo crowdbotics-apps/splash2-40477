@@ -1,7 +1,7 @@
 import { api_v1_petcategory_list } from "../../store/splashAPI/petCategories.slice.js";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { View, Text, FlatList, Image, TouchableOpacity, Pressable } from "react-native";
 
@@ -46,24 +46,25 @@ const PetSelectionScreen = ({
         <Image source={require("./pettopia_logo.png")} style={_styles.cfazrJtM} />
       </View>
       <View style={_styles.OadbPAoG} />
-      <View style={_styles.aSXqtQcC}>
-        <Text style={_styles.CEnpePJQ}>Type of pet</Text>
-        <Text style={_styles.bDkXbCdu}>
-          Now it’s time to choose what type of pet the profile will be for
-        </Text>
-        <FlatList data={PetCategories} renderItem={renderItem} keyExtractor={item => item.name} style={_styles.BEmHibWx} />
-        <Text style={_styles.UsbfGyIr}>
-          Fun fact: You'll be able to create additional profiles afterwards, as
-          desired
-        </Text>
-        <View style={_styles.lhlhLGKf}>
-          <TouchableOpacity style={_styles.yDmVblik} onPress={() => navigation.goBack()}>
-            <Text style={_styles.kXBxkThh}>Back</Text>
-          </TouchableOpacity>
-          <Pressable style={_styles.pfoxdPqW} disabled={!selectedPet}>
-            <Text style={_styles.ToRosxGm}>Next</Text>
-          </Pressable>
-        </View>
+
+      <Text style={_styles.CEnpePJQ}>Type of pet</Text>
+      <Text style={_styles.bDkXbCdu}>
+        Now it’s time to choose what type of pet the profile will be for
+      </Text>
+      <FlatList data={PetCategories} renderItem={renderItem} keyExtractor={item => item.name} style={_styles.BEmHibWx} />
+      <Text style={_styles.UsbfGyIr}>
+        Fun fact: You'll be able to create additional profiles afterwards, as
+        desired
+      </Text>
+      <View style={_styles.lhlhLGKf}>
+        <TouchableOpacity style={_styles.yDmVblik} onPress={() => navigation.goBack()}>
+          <Text style={_styles.kXBxkThh}>Back</Text>
+        </TouchableOpacity>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI5");
+      }} style={_styles.pfoxdPqW} disabled={!selectedPet}>
+          <Text style={_styles.ToRosxGm}>Next</Text>
+        </Pressable>
       </View>
     </View>;
 };
@@ -71,14 +72,6 @@ const PetSelectionScreen = ({
 export default PetSelectionScreen;
 
 const _styles = StyleSheet.create({
-  eODCQCzz: {
-    marginRight: 10
-  },
-  ZyFzdOvx: {
-    width: 50,
-    height: 50,
-    borderRadius: 25
-  },
   gicwGhmK: {
     marginLeft: 10
   },
@@ -98,10 +91,6 @@ const _styles = StyleSheet.create({
   OadbPAoG: {
     borderBottomWidth: 1,
     borderBottomColor: "#ccc"
-  },
-  aSXqtQcC: {
-    paddingHorizontal: 20,
-    paddingTop: 20
   },
   CEnpePJQ: {
     fontSize: 24,
@@ -137,9 +126,6 @@ const _styles = StyleSheet.create({
     flex: 1,
     marginRight: 10
   },
-  CXEKmRjP: {
-    marginRight: 10
-  },
   kXBxkThh: {
     color: "#fff",
     fontWeight: "bold"
@@ -157,8 +143,5 @@ const _styles = StyleSheet.create({
   ToRosxGm: {
     color: "#fff",
     fontWeight: "bold"
-  },
-  fFEbYtSd: {
-    marginLeft: 10
   }
 });
