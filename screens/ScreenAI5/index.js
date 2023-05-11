@@ -1,212 +1,195 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, DatePickerIOS } from 'react-native';
-import pet1 from '../assets/pet1.png';
-import pet2 from '../assets/pet2.png';
-import pet3 from '../assets/pet3.png';
-import pet4 from '../assets/pet4.png';
-import pet5 from '../assets/pet5.png';
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import { View, Text, Image, StyleSheet, ScrollView, Pressable, Dimensions } from "react-native";
+const {
+  width,
+  height
+} = Dimensions.get("window");
 
-const PetRegistrationScreen = () => {
-  const [selectedPet, setSelectedPet] = useState(null);
-  const [petName, setPetName] = useState('');
-  const [petBreed, setPetBreed] = useState('');
-  const [petSize, setPetSize] = useState('');
-  const [petGender, setPetGender] = useState('');
-  const [petDOB, setPetDOB] = useState(new Date());
-  const petOptions = [{
-    id: 1,
-    image: pet1
-  }, {
-    id: 2,
-    image: pet2
-  }, {
-    id: 3,
-    image: pet3
-  }, {
-    id: 4,
-    image: pet4
-  }, {
-    id: 5,
-    image: pet5
-  }];
+const WelcomeScreen = () => {
+  const navigation = useNavigation();
+  return <Pressable>
 
-  const handlePetSelection = pet => {
-    setSelectedPet(pet);
-  };
+      <ScrollView style={styles.NIyTbkFC}>
 
-  const handleBackButton = () => {// handle going back to previous screen
-  };
+        <View style={styles.container}>
 
-  const handleNextButton = () => {// handle going to next screen
-  };
+          <View style={styles.logoContainer}>
 
-  return <View style={styles.container}>
-      <View style={styles.header}>
-        <Image source={require('../assets/pettopia-logo.png')} style={styles.logo} />
-      </View>
-      <View style={styles.petSelection}>
-        {petOptions.map(pet => <TouchableOpacity key={pet.id} onPress={() => handlePetSelection(pet)}>
-            <Image source={pet.image} style={[styles.petImage, selectedPet?.id === pet.id && styles.selectedPetImage]} />
-          </TouchableOpacity>)}
-      </View>
-      <View style={styles.basicPetInfo}>
-        <Text style={styles.basicPetInfoTitle}>Basic Pet Info</Text>
-        <Text style={styles.basicPetInfoSubtitle}>Let's start with your first pet!</Text>
-        <View style={styles.form}>
-          <View style={styles.formField}>
-            <Text style={styles.formLabel}>What is your pet's name? *</Text>
-            <TextInput style={styles.formInput} placeholder="Name" value={petName} onChangeText={setPetName} />
+            <Image source={require("./pettopia_logo.png")} style={styles.logo} />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </View>
-          <View style={styles.formField}>
-            <Text style={styles.formLabel}>What breed is your pet? *</Text>
-            <TextInput style={styles.formInput} placeholder="Breed" value={petBreed} onChangeText={setPetBreed} />
+
+          <View style={styles.imageContainer}>
+
+            <Image source={require("./pettopia_dog_image.png")} style={styles.image} />
+
+
           </View>
-          <View style={styles.formField}>
-            <Text style={styles.formLabel}>What size is your pet?</Text>
-            <Picker style={styles.formInput} selectedValue={petSize} onValueChange={setPetSize}>
-              <Picker.Item label="Select" value="" />
-              <Picker.Item label="Small" value="small" />
-              <Picker.Item label="Medium" value="medium" />
-              <Picker.Item label="Large" value="large" />
-            </Picker>
+
+          <View style={styles.titleContainer}>
+
+            <Text style={styles.title}>Welcome to PetTopia</Text>
+
+
+
+
+
+
+
           </View>
-          <View style={styles.formField}>
-            <Text style={styles.formLabel}>What gender is your pet? *</Text>
-            <Picker style={styles.formInput} selectedValue={petGender} onValueChange={setPetGender}>
-              <Picker.Item label="Select" value="" />
-              <Picker.Item label="Female" value="female" />
-              <Picker.Item label="Male" value="male" />
-            </Picker>
+
+          <View style={styles.textContainer}>
+
+            <Text style={styles.text}>
+
+              A world for Pets, Pet Parents and Pet Admirers alike
+
+            </Text>
+
+
+
+
           </View>
-          <View style={styles.formField}>
-            <Text style={styles.formLabel}>What's your pet's date of birth? *</Text>
-            <DatePickerIOS style={styles.formInput} date={petDOB} onDateChange={setPetDOB} />
+
+          <Pressable style={styles.button} onPress={() => {
+          navigation.navigate("ScreenAI2");
+        }}>
+
+            <Text style={styles.buttonText}>Get started</Text>
+
+          </Pressable>
+
+          <View style={styles.funFactContainer}>
+
+            <Text style={styles.funFact}>
+
+              Fun fact: Creating an account will take roughly five to ten
+
+              minutes
+
+            </Text>
+
           </View>
+
         </View>
-        <Text style={styles.funFact}>Fun fact: You'll be able to create additional profiles afterwards, as desired</Text>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.backButton} onPress={handleBackButton}>
-            <Text style={styles.buttonText}>Back</Text>
-            <Image source={require('../assets/left-arrow.png')} style={styles.buttonIcon} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.nextButton} onPress={handleNextButton}>
-            <Text style={styles.buttonText}>Next</Text>
-            <Image source={require('../assets/right-arrow.png')} style={styles.buttonIcon} />
-          </TouchableOpacity>
-        </View>
-      </View>
-      <View style={styles.footer} />
-    </View>;
+
+      </ScrollView>
+
+    </Pressable>;
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
   },
-  header: {
-    height: 80,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
+  logoContainer: {
+    marginTop: height * 0.024 * 5,
+    width: "100%",
+    height: height * 0.024 * 5,
+    alignItems: "center"
   },
   logo: {
-    width: 150,
-    height: 50,
-    resizeMode: 'contain'
+    width: height * 0.12 * 5,
+    height: height * 0.024 * 5
   },
-  petSelection: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    paddingVertical: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
+  imageContainer: {
+    marginTop: height * 0.024 * 5
   },
-  petImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    borderWidth: 1,
-    borderColor: '#ccc'
+  image: {
+    width: width * 0.12 * 5,
+    height: width * 0.16 * 5,
+    borderRadius: width * 0.02 * 5
   },
-  selectedPetImage: {
-    borderColor: '#22B9B0'
+  titleContainer: {
+    marginTop: height * 0.02 * 5,
+    width: "100%",
+    alignItems: "center"
   },
-  basicPetInfo: {
-    flex: 1,
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 10
+  title: {
+    fontSize: width * 0.011 * 5,
+    color: "#333"
   },
-  basicPetInfoTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10
+  textContainer: {
+    marginTop: height * 0.012 * 5,
+    width: "100%",
+    paddingHorizontal: width * 0.02 * 5
   },
-  basicPetInfoSubtitle: {
-    fontSize: 16,
-    marginBottom: 20
+  text: {
+    fontSize: height * 0.01 * 5,
+    color: "#797979",
+    textAlign: "center"
   },
-  form: {
-    marginBottom: 20
-  },
-  formField: {
-    marginBottom: 10
-  },
-  formLabel: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 5
-  },
-  formInput: {
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10
-  },
-  funFact: {
-    fontSize: 14,
-    fontStyle: 'italic',
-    marginBottom: 10
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  backButton: {
-    backgroundColor: '#22B9B0',
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5
-  },
-  nextButton: {
-    backgroundColor: '#22B9B0',
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5
+  button: {
+    marginTop: 50,
+    backgroundColor: "#22B9B0",
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 30
   },
   buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    marginRight: 5
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold"
   },
-  buttonIcon: {
-    width: 20,
-    height: 20,
-    resizeMode: 'contain'
+  funFactContainer: {
+    marginTop: 20
   },
-  footer: {
-    height: 20,
-    backgroundColor: '#ccc'
+  funFact: {
+    fontSize: 16,
+    color: "#999",
+    width: 317,
+    height: 55,
+    textAlign: "center"
+  },
+  NIyTbkFC: {
+    backgroundColor: "#fff"
   }
 });
-export default PetRegistrationScreen;
+export default WelcomeScreen;
