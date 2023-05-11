@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable } from "react-native";
 
@@ -22,7 +22,7 @@ const PetProfileScreen = () => {
         </Text>
         <View style={styles.optionsContainer}>
           <TouchableOpacity style={[styles.option, selected === "one" && styles.selectedOption]} onPress={() => handleSelection("one")}>
-            <Image source={require("./pet_image_col_1.png")} style={styles.petImage} />
+            <Image source={require("./pet_qtde_column_1.png")} style={styles.petImage} />
             <Text style={styles.optionText}>One pet</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.option, selected === "two" && styles.selectedOption]} onPress={() => handleSelection("two")}>
