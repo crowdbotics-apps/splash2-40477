@@ -31,14 +31,14 @@ const PetProfileScreen = () => {
             <Image source={require("./pettopia_profile_left.png")} style={styles.profileTypeImage} />
             <View>
               <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
-              <Text style={styles.profileTypeText}>Pet Guardian</Text>
+              <Text style={styles.profileTypeText}>PET PARENT</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.profileTypeBox, petGuardianSelected && styles.selectedProfileTypeBox]} onPress={handlePetGuardianPress}>
             <Image source={require("./pettopia_profile_right.png")} style={styles.profileTypeImage} />
             <View>
               <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
-              <Text style={styles.profileTypeText}>Pet Guardian</Text>
+              <Text style={styles.profileTypeText}>PET ADMIRER</Text>
             </View>
           </TouchableOpacity>
         </View>
