@@ -61,7 +61,7 @@ const PetSelectionScreen = ({
           <Text style={_styles.kXBxkThh}>Back</Text>
         </TouchableOpacity>
         <Pressable onPress={() => {
-        navigation.navigate("ScreenAI5");
+        navigation.navigate("ScreenAI6");
       }} style={_styles.pfoxdPqW} disabled={!selectedPet}>
           <Text style={_styles.ToRosxGm}>Next</Text>
         </Pressable>
