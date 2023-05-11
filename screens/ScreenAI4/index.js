@@ -62,7 +62,7 @@ const PetSelectionScreen = ({
         </TouchableOpacity>
         <Pressable onPress={() => {
         navigation.navigate("ScreenAI6");
-      }} style={_styles.pfoxdPqW} disabled={!selectedPet}>
+      }} style={_styles.pfoxdPqW}>
           <Text style={_styles.ToRosxGm}>Next</Text>
         </Pressable>
       </View>
