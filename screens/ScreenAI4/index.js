@@ -30,7 +30,7 @@ const PetSelectionScreen = ({
 
   const renderItem = ({
     item
-  }) => <TouchableOpacity style={{
+  }) => <View style={{
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: selectedPet === item ? "#F5B56D" : "#F2F2F2",
@@ -38,8 +38,8 @@ const PetSelectionScreen = ({
     borderRadius: 10,
     marginVertical: 5
   }} onPress={() => handlePetSelection(item)}>
-      <Text style={_styles.gicwGhmK}>{item?.name}</Text>
-    </TouchableOpacity>;
+      <Text style={_styles.gicwGhmK}>{item.name}</Text>
+    </View>;
 
   return <View style={_styles.myNzMFVz}>
       <View style={_styles.NVslVSfO}>
