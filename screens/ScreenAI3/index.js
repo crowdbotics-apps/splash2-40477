@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 20,
-    height: 250
+    height: 250,
+    gap: 10
   },
   option: {
     width: 100,
@@ -112,10 +113,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5b56d"
   },
   petImage: {
-    width: 160,
+    width: '100%',
     height: 150,
-    resizeMode: "contain",
-    marginBottom: 10
+    marginBottom: 10,
+    borderRadius: 10,
+    marginTop: -72
   },
   optionText: {
     fontSize: 16,
