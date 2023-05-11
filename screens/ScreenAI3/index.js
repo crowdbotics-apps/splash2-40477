@@ -23,17 +23,17 @@ const PetProfileScreen = () => {
         <View style={styles.optionsContainer}>
           <TouchableOpacity style={[styles.option, selected === "one" && styles.selectedOption]} onPress={() => handleSelection("one")}>
             <Image source={require("./pet_qtde_column_1.png")} style={styles.petImage} />
-             <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
+            <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
             <Text style={styles.optionText}>ONE PET</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.option, selected === "two" && styles.selectedOption]} onPress={() => handleSelection("two")}>
             <Image source={require("./pet_image_col_2.png")} style={styles.petImage} />
-              <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
+            <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
             <Text style={styles.optionText}>TWO PETS</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.option, selected === "three" && styles.selectedOption]} onPress={() => handleSelection("three")}>
             <Image source={require("./pet_image_col_3.png")} style={styles.petImage} />
-              <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
+            <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
             <Text style={styles.optionText}>THREE PETS</Text>
           </TouchableOpacity>
         </View>
@@ -113,9 +113,8 @@ const styles = StyleSheet.create({
   pawImage: {
     height: 24,
     width: 28,
-    marginLeft: 34,
     marginBottom: 12,
-    marginTop: 32
+    marginTop: 12
   },
   selectedOption: {
     backgroundColor: "#f5b56d"
@@ -151,7 +150,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 20,
-    width: '100%'
+    width: "100%"
   },
   button: {
     flexDirection: "row",
