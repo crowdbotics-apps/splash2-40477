@@ -127,7 +127,8 @@ const styles = StyleSheet.create({
   selectedText: {
     fontSize: 16,
     fontWeight: "bold",
-    marginBottom: 10
+    marginBottom: 10,
+    textAlign: "center"
   },
   funFact: {
     fontSize: 14,
