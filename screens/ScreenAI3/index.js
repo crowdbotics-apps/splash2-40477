@@ -182,10 +182,6 @@ const styles = StyleSheet.create({
     height: 14,
     position: "absolute",
     left: 104
-  },
-  bottomLine: {
-    height: 1,
-    backgroundColor: "#E5E5E5"
   }
 });
 export default PetProfileScreen;
