@@ -23,14 +23,17 @@ const PetProfileScreen = () => {
         <View style={styles.optionsContainer}>
           <TouchableOpacity style={[styles.option, selected === "one" && styles.selectedOption]} onPress={() => handleSelection("one")}>
             <Image source={require("./pet_qtde_column_1.png")} style={styles.petImage} />
+             <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
             <Text style={styles.optionText}>ONE PET</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.option, selected === "two" && styles.selectedOption]} onPress={() => handleSelection("two")}>
             <Image source={require("./pet_image_col_2.png")} style={styles.petImage} />
+              <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
             <Text style={styles.optionText}>TWO PETS</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.option, selected === "three" && styles.selectedOption]} onPress={() => handleSelection("three")}>
             <Image source={require("./pet_image_col_3.png")} style={styles.petImage} />
+              <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
             <Text style={styles.optionText}>THREE PETS</Text>
           </TouchableOpacity>
         </View>
@@ -41,18 +44,18 @@ const PetProfileScreen = () => {
           Fun fact: You'll be able to create additional profiles afterwards, as
           desired.
         </Text>
-         <View style={styles.footer}>
-        <TouchableOpacity style={styles.button}>
-          <Image source={require("./left_arrow.png")} style={styles.buttonIconLeft} />
-          <Text style={styles.buttonText}>Back</Text>
-        </TouchableOpacity>
-        <Pressable style={styles.button} onPress={() => {
+        <View style={styles.footer}>
+          <TouchableOpacity style={styles.button}>
+            <Image source={require("./left_arrow.png")} style={styles.buttonIconLeft} />
+            <Text style={styles.buttonText}>Back</Text>
+          </TouchableOpacity>
+          <Pressable style={styles.button} onPress={() => {
           navigation.navigate("ScreenAI4");
         }}>
-          <Text style={styles.buttonText}>Next</Text>
-          <Image source={require("./right_arrow.png")} style={styles.buttonIconRight} />
-        </Pressable>
-      </View>
+            <Text style={styles.buttonText}>Next</Text>
+            <Image source={require("./right_arrow.png")} style={styles.buttonIconRight} />
+          </Pressable>
+        </View>
       </View>
     </ScrollView>;
 };
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 60,
     paddingTop: 10
   },
   optionsContainer: {
@@ -106,6 +109,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center"
+  },
+  pawImage: {
+    height: 24,
+    width: 28,
+    marginLeft: 34,
+    marginBottom: 12,
+    marginTop: 32
   },
   selectedOption: {
     backgroundColor: "#f5b56d"
@@ -140,7 +150,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
+    width: '100%'
   },
   button: {
     flexDirection: "row",
