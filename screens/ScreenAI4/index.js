@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
-import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, Image, TouchableOpacity, Pressable } from "react-native";
 
 const PetSelectionScreen = ({
   navigation
@@ -60,9 +60,9 @@ const PetSelectionScreen = ({
           <TouchableOpacity style={_styles.yDmVblik} onPress={() => navigation.goBack()}>
             <Text style={_styles.kXBxkThh}>Back</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={_styles.pfoxdPqW} disabled={!selectedPet}>
+          <Pressable style={_styles.pfoxdPqW} disabled={!selectedPet}>
             <Text style={_styles.ToRosxGm}>Next</Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </View>
     </View>;
