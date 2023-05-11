@@ -1,7 +1,7 @@
+import React, { useState, useEffect } from "react";
 import { api_v1_petcategory_list } from "../../store/splashAPI/petCategories.slice.js";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { View, Text, FlatList, Image, TouchableOpacity, Pressable } from "react-native";
 
