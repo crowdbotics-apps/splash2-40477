@@ -92,19 +92,18 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     textAlign: "center",
-    marginBottom: 60,
+    marginBottom: 80,
     paddingTop: 10
   },
   optionsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 20,
     height: 250,
     gap: 10
   },
   option: {
     width: 100,
-    height: 250,
+    height: 200,
     backgroundColor: "#f2f2f2",
     borderRadius: 10,
     justifyContent: "center",
@@ -135,7 +134,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     marginBottom: 20,
-    marginTop: 20,
     textAlign: "center"
   },
   funFact: {
