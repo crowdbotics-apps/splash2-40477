@@ -41,20 +41,19 @@ const PetProfileScreen = () => {
           Fun fact: You'll be able to create additional profiles afterwards, as
           desired.
         </Text>
-        <View style={styles.buttonsContainer}>
-          <TouchableOpacity style={styles.backButton}>
-            <Image source={require("./left_arrow.png")} style={styles.arrow} />
-            <Text style={styles.buttonText}>Back</Text>
-          </TouchableOpacity>
-          <Pressable style={styles.nextButton} onPress={() => {
+         <View style={styles.footer}>
+        <TouchableOpacity style={styles.button}>
+          <Image source={require("./left_arrow.png")} style={styles.buttonIconLeft} />
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
+        <Pressable style={styles.button} onPress={() => {
           navigation.navigate("ScreenAI4");
         }}>
-            <Text style={styles.buttonText}>Next</Text>
-            <Image source={require("./right_arrow.png")} style={styles.arrow} />
-          </Pressable>
-        </View>
+          <Text style={styles.buttonText}>Next</Text>
+          <Image source={require("./right_arrow.png")} style={styles.buttonIconRight} />
+        </Pressable>
       </View>
-      <View style={styles.footer} />
+      </View>
     </ScrollView>;
 };
 
@@ -136,42 +135,46 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 20
   },
-  buttonsContainer: {
+  footer: {
+    height: 60,
     flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between",
-    width: "100%"
+    paddingHorizontal: 20
   },
-  backButton: {
-    backgroundColor: "#22b9b0",
+  button: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 10,
-    borderRadius: 10,
-    marginRight: 10
-  },
-  nextButton: {
-    backgroundColor: "#22b9b0",
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 10,
-    borderRadius: 10,
-    marginLeft: 10
+    justifyContent: "center",
+    marginLeft: 10,
+    width: 130,
+    textAlign: "center",
+    backgroundColor: "#22B9B0",
+    padding: 12,
+    borderRadius: 12
   },
   buttonText: {
-    color: "#fff",
+    color: "#FFFFFF",
+    fontSize: 14,
     fontWeight: "bold",
-    marginRight: 5
+    marginHorizontal: 10
   },
-  arrow: {
-    width: 20,
-    height: 20,
-    resizeMode: "contain"
+  buttonIconLeft: {
+    width: 14,
+    height: 14,
+    position: "absolute",
+    left: 12,
+    top: 14
   },
-  footer: {
-    height: 20,
-    backgroundColor: "#f2f2f2",
-    borderTopWidth: 1,
-    borderTopColor: "#ccc"
+  buttonIconRight: {
+    width: 14,
+    height: 14,
+    position: "absolute",
+    left: 104
+  },
+  bottomLine: {
+    height: 1,
+    backgroundColor: "#E5E5E5"
   }
 });
 export default PetProfileScreen;
