@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, Pressable } from "react-native";
 
 const PetRegistrationScreen = () => {
+  const navigation = useNavigation();
   const [selectedPet, setSelectedPet] = useState(null);
   const [toyType, setToyType] = useState([]);
   const [brandPreference, setBrandPreference] = useState("");
@@ -112,7 +114,9 @@ const PetRegistrationScreen = () => {
           <Image source={require("../assets/left-arrow.png")} style={styles.arrowIcon} />
           <Text style={styles.buttonText}>Back</Text>
         </TouchableOpacity>
-        <Pressable style={styles.nextButton}>
+        <Pressable style={styles.nextButton} onPress={() => {
+        navigation.navigate("ScreenAI8");
+      }}>
           <Text style={styles.buttonText}>Next</Text>
           <Image source={require("../assets/right-arrow.png")} style={styles.arrowIcon} />
         </Pressable>
