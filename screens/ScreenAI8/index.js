@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, ScrollView } from "react-native";
 import pet1 from "../assets/pet1.png";
 import pet2 from "../assets/pet2.png";
 import pet3 from "../assets/pet3.png";
@@ -42,7 +42,7 @@ const SnackTimeScreen = ({
   const handleNext = () => {// Save form data and navigate to next screen
   };
 
-  return <View style={styles.container}>
+  return <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
@@ -104,7 +104,7 @@ const SnackTimeScreen = ({
       <View style={styles.footer}>
         <View style={styles.line} />
       </View>
-    </View>;
+    </ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -113,13 +113,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   },
   header: {
-    backgroundColor: "#22B9B0",
+    backgroundColor: "#fff",
     height: 80,
     justifyContent: "center",
     alignItems: "center"
   },
   logo: {
-    width: 120,
+    width: 180,
     height: 40
   },
   petSelection: {
