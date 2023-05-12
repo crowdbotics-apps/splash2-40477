@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, ScrollView } from "react-native";
 
 const SnackTimeScreen = ({
@@ -12,19 +12,19 @@ const SnackTimeScreen = ({
   const pets = [{
     id: 1,
     name: "Buddy",
-    image: 'none'
+    image: "none"
   }, {
     id: 2,
     name: "Luna",
-    image: 'none'
+    image: "none"
   }, {
     id: 3,
     name: "Max",
-    image: 'none'
+    image: "none"
   }, {
     id: 4,
     name: "Charlie",
-    image: 'none'
+    image: "none"
   }];
 
   const handlePetSelection = pet => {
