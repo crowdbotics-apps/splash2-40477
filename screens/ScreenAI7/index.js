@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, Pressable } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, Pressable, ScrollView } from "react-native";
 
 const PetRegistrationScreen = () => {
   const navigation = useNavigation();
@@ -51,7 +51,7 @@ const PetRegistrationScreen = () => {
     setCostumeType(value);
   };
 
-  return <View style={styles.container}>
+  return <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
@@ -122,7 +122,7 @@ const PetRegistrationScreen = () => {
         </Pressable>
       </View>
       <View style={styles.bottomLine} />
-    </View>;
+    </ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -132,13 +132,13 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 80,
-    backgroundColor: "#22B9B0",
+    backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center"
   },
   logo: {
-    width: 150,
-    height: 50
+    width: 180,
+    height: 40
   },
   petListContainer: {
     flexDirection: "row",
@@ -168,11 +168,11 @@ const styles = StyleSheet.create({
   playTimeTitle: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#22B9B0"
+    color: "#000"
   },
   playTimeSubtitle: {
     fontSize: 16,
-    color: "#666",
+    color: "#000",
     marginTop: 10,
     textAlign: "center"
   },
