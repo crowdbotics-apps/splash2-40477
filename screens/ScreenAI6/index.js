@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, TextInput, Picker, ScrollView, Pressable } from "react-native";
 
 const PetRegistrationScreen = () => {
+  const navigation = useNavigation();
   const [selectedPet, setSelectedPet] = useState(null);
   const [petName, setPetName] = useState("");
   const [petBreed, setPetBreed] = useState("");
@@ -30,9 +32,6 @@ const PetRegistrationScreen = () => {
   };
 
   const handleBackButton = () => {// handle back button press
-  };
-
-  const handleNextButton = () => {// handle next button press
   };
 
   return <ScrollView style={styles.container}>
@@ -94,7 +93,9 @@ const PetRegistrationScreen = () => {
           <TouchableOpacity style={styles.backButton} onPress={handleBackButton}>
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
-          <Pressable style={styles.nextButton} onPress={handleNextButton}>
+          <Pressable style={styles.nextButton} onPress={() => {
+          navigation.navigate("ScreenAI7");
+        }}>
             <Text style={styles.buttonText}>Next</Text>
           </Pressable>
         </View>
