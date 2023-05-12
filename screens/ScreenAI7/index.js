@@ -53,7 +53,7 @@ const PetRegistrationScreen = () => {
 
   return <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("../assets/pettopia-logo.png")} style={styles.logo} />
+        <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
       <View style={styles.petListContainer}>
         {petList.map(pet => <TouchableOpacity key={pet.id} style={[styles.petItem, selectedPet && selectedPet.id === pet.id && styles.selectedPetItem]} onPress={() => handlePetSelection(pet)}>
