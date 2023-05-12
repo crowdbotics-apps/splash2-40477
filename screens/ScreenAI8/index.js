@@ -1,9 +1,5 @@
 import { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, ScrollView } from "react-native";
-import pet1 from "../assets/pet1.png";
-import pet2 from "../assets/pet2.png";
-import pet3 from "../assets/pet3.png";
-import pet4 from "../assets/pet4.png";
 
 const SnackTimeScreen = ({
   navigation
@@ -16,19 +12,19 @@ const SnackTimeScreen = ({
   const pets = [{
     id: 1,
     name: "Buddy",
-    image: pet1
+    image: 'none'
   }, {
     id: 2,
     name: "Luna",
-    image: pet2
+    image: 'none'
   }, {
     id: 3,
     name: "Max",
-    image: pet3
+    image: 'none'
   }, {
     id: 4,
     name: "Charlie",
-    image: pet4
+    image: 'none'
   }];
 
   const handlePetSelection = pet => {
