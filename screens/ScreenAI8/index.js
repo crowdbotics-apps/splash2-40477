@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker } from "react-native";
 import pet1 from "../assets/pet1.png";
 import pet2 from "../assets/pet2.png";
@@ -44,7 +44,7 @@ const SnackTimeScreen = ({
 
   return <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={require("../assets/pettopia-logo.png")} style={styles.logo} />
+        <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
       <View style={styles.petSelection}>
         {pets.map(pet => <TouchableOpacity key={pet.id} style={[styles.petItem, selectedPet?.id === pet.id && styles.selectedPetItem]} onPress={() => handlePetSelection(pet)}>
