@@ -1,6 +1,6 @@
 import axios from "axios";
 const splashAPI = axios.create({
-  baseURL: "https://splash2-40477-prod.herokuapp.com",
+  baseURL: "https://splash2-40477.herokuapp.com",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json"
