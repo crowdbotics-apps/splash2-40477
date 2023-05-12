@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, Pressable, ScrollView } from "react-native";
 
 const PetRegistrationScreen = () => {
