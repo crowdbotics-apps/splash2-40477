@@ -90,11 +90,11 @@ const SnackTimeScreen = ({
       <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.backButton} onPress={handleBack}>
           <Text style={styles.buttonText}>Back</Text>
-          <Image source={require("../assets/left-arrow.png")} style={styles.buttonIcon} />
+          <Image source={require("./left_arrow.png")} style={styles.buttonIcon} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
           <Text style={styles.buttonText}>Next</Text>
-          <Image source={require("../assets/right-arrow.png")} style={styles.buttonIcon} />
+          <Image source={require("./right_arrow.png")} style={styles.buttonIcon} />
         </TouchableOpacity>
       </View>
       <View style={styles.footer}>
