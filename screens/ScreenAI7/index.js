@@ -111,14 +111,14 @@ const PetRegistrationScreen = () => {
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.backButton}>
-          <Image source={require("../assets/left-arrow.png")} style={styles.arrowIcon} />
+          <Image source={require("./left_arrow.png")} style={styles.arrowIcon} />
           <Text style={styles.buttonText}>Back</Text>
         </TouchableOpacity>
         <Pressable style={styles.nextButton} onPress={() => {
         navigation.navigate("ScreenAI8");
       }}>
           <Text style={styles.buttonText}>Next</Text>
-          <Image source={require("../assets/right-arrow.png")} style={styles.arrowIcon} />
+          <Image source={require("./right_arrow.png")} style={styles.arrowIcon} />
         </Pressable>
       </View>
       <View style={styles.bottomLine} />
