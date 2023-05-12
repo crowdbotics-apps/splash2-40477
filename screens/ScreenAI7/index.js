@@ -12,23 +12,23 @@ const PetRegistrationScreen = () => {
   const petList = [{
     id: 1,
     name: "Dog",
-    image: 'require("../assets/dog.png")'
+    image: 'none'
   }, {
     id: 2,
     name: "Cat",
-    image: 'require("../assets/cat.png")'
+    image: 'none'
   }, {
     id: 3,
     name: "Bird",
-    image: 'require("../assets/bird.png")'
+    image: 'none'
   }, {
     id: 4,
     name: "Fish",
-    image: 'require("../assets/fish.png")'
+    image: 'none'
   }, {
     id: 5,
     name: "Hamster",
-    image: 'require("../assets/hamster.png")'
+    image: 'none'
   }];
 
   const handlePetSelection = pet => {
