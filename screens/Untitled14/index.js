@@ -55,7 +55,7 @@ const ProfileTypeScreen = () => {
           <Text style={styles.buttonText}>Back</Text>
         </TouchableOpacity>
         <Pressable style={styles.button} onPress={() => {
-        navigation.navigate("ScreenAI3");
+        navigation.navigate("ScreenAI4");
       }}>
           <Text style={styles.buttonText}>Next</Text>
           <Image source={require("./right_arrow.png")} style={styles.buttonIconRight} />

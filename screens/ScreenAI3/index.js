@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable, ScrollView } from "react-native";
 
@@ -50,7 +50,7 @@ const PetProfileScreen = () => {
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
           <Pressable style={styles.button} onPress={() => {
-          navigation.navigate("ScreenAI4");
+          navigation.navigate("Untitled14");
         }}>
             <Text style={styles.buttonText}>Next</Text>
             <Image source={require("./right_arrow.png")} style={styles.buttonIconRight} />
