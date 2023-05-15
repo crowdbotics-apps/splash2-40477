@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, TextInput, Picker, ScrollView, Pressable } from "react-native";
 
 const PetPhotoScreen = () => {
-  const navigation = useNavigation();
   const [selectedPet, setSelectedPet] = useState(null);
   const [petName, setPetName] = useState("");
   const [petBreed, setPetBreed] = useState("");
@@ -44,45 +42,55 @@ const PetPhotoScreen = () => {
           </TouchableOpacity>)}
       </View>
       <View style={styles.basicPetInfo}>
-        <Text style={styles.basicPetInfoTitle}>Basic Pet Info</Text>
+        <Text style={styles.basicPetInfoTitle}>Pet Profile</Text>
         <Text style={styles.basicPetInfoSubtitle}>
-          Let's start with your first pet!
+          What do you want your pets username to be? That’s how others will find
+          him
         </Text>
         <View style={styles.form}>
           <View style={styles.formField}>
-            <Text style={styles.formLabel}>What is your pet's name? *</Text>
-            <TextInput style={styles.formInput} placeholder="Name" value={petName} onChangeText={setPetName} />
+            <Text style={styles.formLabel}>About #name</Text>
+            <TextInput style={styles.formInput} placeholder="Tell us something about your pet" value={petName} onChangeText={setPetName} />
           </View>
           <View style={styles.formField}>
-            <Text style={styles.formLabel}>What breed is your pet? *</Text>
+            <Text style={styles.formLabel}>Favorite activity</Text>
             <Picker style={styles.formInput} selectedValue={petBreed} onValueChange={setPetBreed}>
-              <Picker.Item label="Breed" value="" />
-              <Picker.Item label="Bulldog" value="bulldog" />
-              <Picker.Item label="Chihuahua" value="chihuahua" />
-              <Picker.Item label="Labrador" value="labrador" />
-            </Picker>
-          </View>
-          <View style={styles.formField}>
-            <Text style={styles.formLabel}>What size is your pet?</Text>
-            <Picker style={styles.formInput} selectedValue={petSize} onValueChange={setPetSize}>
-              <Picker.Item label="Select" value="" />
-              <Picker.Item label="Small" value="small" />
-              <Picker.Item label="Medium" value="medium" />
-              <Picker.Item label="Large" value="large" />
-            </Picker>
-          </View>
-          <View style={styles.formField}>
-            <Text style={styles.formLabel}>What gender is your pet? *</Text>
-            <Picker style={styles.formInput} selectedValue={petGender} onValueChange={setPetGender}>
-              <Picker.Item label="Select" value="" />
-              <Picker.Item label="Female" value="female" />
-              <Picker.Item label="Male" value="male" />
+              <Picker.Item label="Activity" value="Activity" />
+              <Picker.Item label="Sleep" value="Sleep" />
+              <Picker.Item label="Run" value="Run" />
+              <Picker.Item label="Play" value="Play" />
             </Picker>
           </View>
           <View style={styles.formField}>
             <Text style={styles.formLabel}>
-              What's your pet's date of birth? *
+              Your pets biggest accomplishment
             </Text>
+            <Picker style={styles.formInput} selectedValue={petBreed} onValueChange={setPetBreed}>
+              <Picker.Item label="Activity" value="Activity" />
+              <Picker.Item label="Sleep" value="Sleep" />
+              <Picker.Item label="Run" value="Run" />
+              <Picker.Item label="Play" value="Play" />
+            </Picker>
+          </View>
+          <View style={styles.formField}>
+            <Text style={styles.formLabel}>Your pets biggest dislike</Text>
+            <Picker style={styles.formInput} selectedValue={petBreed} onValueChange={setPetBreed}>
+              <Picker.Item label="Activity" value="Activity" />
+              <Picker.Item label="Sleep" value="Sleep" />
+              <Picker.Item label="Run" value="Run" />
+              <Picker.Item label="Play" value="Play" />
+            </Picker>
+          </View>
+          <View style={styles.formField}>
+            <Text style={styles.formLabel}>
+              How would you define your pets personality?
+            </Text>
+            <Picker style={styles.formInput} selectedValue={petBreed} onValueChange={setPetBreed}>
+              <Picker.Item label="Activity" value="Activity" />
+              <Picker.Item label="Sleep" value="Sleep" />
+              <Picker.Item label="Run" value="Run" />
+              <Picker.Item label="Play" value="Play" />
+            </Picker>
           </View>
         </View>
         <Text style={styles.funFact}>
@@ -93,9 +101,7 @@ const PetPhotoScreen = () => {
           <TouchableOpacity style={styles.backButton} onPress={handleBackButton}>
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
-          <Pressable style={styles.nextButton} onPress={() => {
-          navigation.navigate("ScreenAI7");
-        }}>
+          <Pressable style={styles.nextButton} onPress={() => {}}>
             <Text style={styles.buttonText}>Next</Text>
           </Pressable>
         </View>
