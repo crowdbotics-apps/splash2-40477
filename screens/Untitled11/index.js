@@ -1,12 +1,11 @@
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable } from "react-native";
 
 const TermsAndConditionsScreen = () => {
+  const navigation = useNavigation();
   return <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Image source={{
-        uri: "https://tinyurl.com/42evm3m3"
-      }} style={styles.logo} />
+        <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
       <View style={styles.content}>
         <Text style={styles.title}>Terms and Conditions</Text>
@@ -53,7 +52,9 @@ const TermsAndConditionsScreen = () => {
             uri: "https://tinyurl.com/42evm3m3"
           }} style={styles.arrowIcon} />
           </TouchableOpacity>
-          <Pressable style={styles.nextButton}>
+          <Pressable style={styles.nextButton} onPress={() => {
+          navigation.navigate("Untitled12");
+        }}>
             <Text style={styles.nextButtonText}>Next</Text>
             <Image source={{
             uri: "https://tinyurl.com/42evm3m3"
