@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable } from "react-native";
 
 const TermsAndConditionsScreen = () => {
   return <ScrollView style={styles.container}>
@@ -53,12 +53,12 @@ const TermsAndConditionsScreen = () => {
             uri: "https://tinyurl.com/42evm3m3"
           }} style={styles.arrowIcon} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.nextButton}>
+          <Pressable style={styles.nextButton}>
             <Text style={styles.nextButtonText}>Next</Text>
             <Image source={{
             uri: "https://tinyurl.com/42evm3m3"
           }} style={styles.arrowIcon} />
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </View>
       <View style={styles.footer} />
