@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, ScrollView } from "react-native";
+import { useState } from "react";
+import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, ScrollView, Pressable } from "react-native";
 
 const SnackTimeScreen = ({
   navigation
@@ -33,9 +33,6 @@ const SnackTimeScreen = ({
 
   const handleBack = () => {
     navigation.goBack();
-  };
-
-  const handleNext = () => {// Save form data and navigate to next screen
   };
 
   return <ScrollView style={styles.container}>
@@ -92,10 +89,12 @@ const SnackTimeScreen = ({
           <Text style={styles.buttonText}>Back</Text>
           <Image source={require("./left_arrow.png")} style={styles.buttonIcon} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
+        <Pressable style={styles.nextButton} onPress={() => {
+        navigation.navigate("Untitled9");
+      }}>
           <Text style={styles.buttonText}>Next</Text>
           <Image source={require("./right_arrow.png")} style={styles.buttonIcon} />
-        </TouchableOpacity>
+        </Pressable>
       </View>
       <View style={styles.footer}>
         <View style={styles.line} />
