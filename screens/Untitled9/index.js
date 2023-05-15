@@ -1,7 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, TextInput, Picker, ScrollView, Pressable } from "react-native";
 
 const PetPhotoScreen = () => {
+  const navigation = useNavigation();
   const [selectedPet, setSelectedPet] = useState(null);
   const [petName, setPetName] = useState("");
   const [petBreed, setPetBreed] = useState("");
@@ -101,7 +103,9 @@ const PetPhotoScreen = () => {
           <TouchableOpacity style={styles.backButton} onPress={handleBackButton}>
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
-          <Pressable style={styles.nextButton} onPress={() => {}}>
+          <Pressable style={styles.nextButton} onPress={() => {
+          navigation.navigate("Untitled11");
+        }}>
             <Text style={styles.buttonText}>Next</Text>
           </Pressable>
         </View>
