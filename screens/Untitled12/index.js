@@ -71,7 +71,7 @@ const UserInfo = () => {
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
           <Pressable style={styles.nextButton} onPress={() => {
-          navigation.navigate("ScreenAI7");
+          navigation.navigate("Untitled13");
         }}>
             <Text style={styles.buttonText}>Next</Text>
           </Pressable>
