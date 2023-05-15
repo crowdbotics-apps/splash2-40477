@@ -1,16 +1,15 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from "react-native";
 
 const PettopiaScreen = () => {
   return <View style={styles.container}>
       <View style={styles.logoContainer}>
-        <Image source={{
-        uri: 'https://tinyurl.com/42evm3m3'
-      }} style={styles.logo} />
+        <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>You're all done</Text>
-        <Text style={styles.subtitle}>You can now review your account and pet information</Text>
+        <Text style={styles.subtitle}>
+          You can now review your account and pet information
+        </Text>
       </View>
       <View style={styles.fieldContainer}>
         <Text style={styles.label}>Combined account name</Text>
@@ -20,7 +19,7 @@ const PettopiaScreen = () => {
         <View style={styles.petColumn}>
           <TouchableOpacity style={styles.pet}>
             <Image source={{
-            uri: 'https://tinyurl.com/42evm3m3'
+            uri: "https://tinyurl.com/42evm3m3"
           }} style={styles.petImage} />
             <View style={styles.editButton}>
               <Text style={styles.editText}>Edit</Text>
@@ -28,7 +27,7 @@ const PettopiaScreen = () => {
           </TouchableOpacity>
           <TouchableOpacity style={styles.pet}>
             <Image source={{
-            uri: 'https://tinyurl.com/42evm3m3'
+            uri: "https://tinyurl.com/42evm3m3"
           }} style={styles.petImage} />
             <View style={styles.editButton}>
               <Text style={styles.editText}>Edit</Text>
@@ -36,7 +35,7 @@ const PettopiaScreen = () => {
           </TouchableOpacity>
           <TouchableOpacity style={styles.pet}>
             <Image source={{
-            uri: 'https://tinyurl.com/42evm3m3'
+            uri: "https://tinyurl.com/42evm3m3"
           }} style={styles.petImage} />
             <View style={styles.editButton}>
               <Text style={styles.editText}>Edit</Text>
@@ -46,7 +45,7 @@ const PettopiaScreen = () => {
         <View style={styles.petColumn}>
           <TouchableOpacity style={styles.pet}>
             <Image source={{
-            uri: 'https://tinyurl.com/42evm3m3'
+            uri: "https://tinyurl.com/42evm3m3"
           }} style={styles.petImage} />
             <View style={styles.editButton}>
               <Text style={styles.editText}>Edit</Text>
@@ -54,7 +53,7 @@ const PettopiaScreen = () => {
           </TouchableOpacity>
           <TouchableOpacity style={styles.pet}>
             <Image source={{
-            uri: 'https://tinyurl.com/42evm3m3'
+            uri: "https://tinyurl.com/42evm3m3"
           }} style={styles.petImage} />
             <View style={styles.editButton}>
               <Text style={styles.editText}>Edit</Text>
@@ -62,7 +61,7 @@ const PettopiaScreen = () => {
           </TouchableOpacity>
           <TouchableOpacity style={styles.pet}>
             <Image source={{
-            uri: 'https://tinyurl.com/42evm3m3'
+            uri: "https://tinyurl.com/42evm3m3"
           }} style={styles.petImage} />
             <View style={styles.editButton}>
               <Text style={styles.editText}>Edit</Text>
@@ -73,14 +72,14 @@ const PettopiaScreen = () => {
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.backButton}>
           <Image source={{
-          uri: 'https://tinyurl.com/4j5j8z6r'
+          uri: "https://tinyurl.com/4j5j8z6r"
         }} style={styles.arrow} />
           <Text style={styles.backText}>Back</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.nextButton}>
           <Text style={styles.nextText}>Next</Text>
           <Image source={{
-          uri: 'https://tinyurl.com/4j5j8z6r'
+          uri: "https://tinyurl.com/4j5j8z6r"
         }} style={styles.arrow} />
         </TouchableOpacity>
       </View>
@@ -91,12 +90,12 @@ const PettopiaScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     paddingHorizontal: 20,
     paddingTop: 40
   },
   logoContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: 20
   },
   logo: {
@@ -104,36 +103,36 @@ const styles = StyleSheet.create({
     height: 50
   },
   titleContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: 20
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10
   },
   subtitle: {
     fontSize: 16,
-    color: '#666',
-    textAlign: 'center'
+    color: "#666",
+    textAlign: "center"
   },
   fieldContainer: {
     marginBottom: 20
   },
   label: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     borderRadius: 5,
     padding: 10
   },
   petsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 20
   },
   petColumn: {
@@ -144,65 +143,65 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 10,
     marginBottom: 10,
-    overflow: 'hidden',
-    position: 'relative'
+    overflow: "hidden",
+    position: "relative"
   },
   petImage: {
     flex: 1,
-    resizeMode: 'cover'
+    resizeMode: "cover"
   },
   editButton: {
-    backgroundColor: '#22B9B0',
-    position: 'absolute',
+    backgroundColor: "#22B9B0",
+    position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
     paddingVertical: 10,
-    alignItems: 'center'
+    alignItems: "center"
   },
   editText: {
-    color: '#fff',
-    fontWeight: 'bold'
+    color: "#fff",
+    fontWeight: "bold"
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 20
   },
   backButton: {
-    backgroundColor: '#22B9B0',
-    flexDirection: 'row',
-    alignItems: 'center',
+    backgroundColor: "#22B9B0",
+    flexDirection: "row",
+    alignItems: "center",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5
   },
   backText: {
-    color: '#fff',
-    fontWeight: 'bold',
+    color: "#fff",
+    fontWeight: "bold",
     marginLeft: 10
   },
   nextButton: {
-    backgroundColor: '#22B9B0',
-    flexDirection: 'row',
-    alignItems: 'center',
+    backgroundColor: "#22B9B0",
+    flexDirection: "row",
+    alignItems: "center",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5
   },
   nextText: {
-    color: '#fff',
-    fontWeight: 'bold',
+    color: "#fff",
+    fontWeight: "bold",
     marginRight: 10
   },
   arrow: {
     width: 20,
     height: 20,
-    tintColor: '#fff'
+    tintColor: "#fff"
   },
   line: {
     height: 1,
-    backgroundColor: '#ccc'
+    backgroundColor: "#ccc"
   }
 });
 export default PettopiaScreen;
