@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable } from "react-native";
 
@@ -28,14 +28,14 @@ const ProfileTypeScreen = () => {
         </Text>
         <View style={styles.profileTypeContainer}>
           <TouchableOpacity style={[styles.profileTypeBox, petParentSelected && styles.selectedProfileTypeBox]} onPress={handlePetParentPress}>
-            <Image source={require("./pettopia_profile_left.png")} style={styles.profileTypeImage} />
+            <Image source={require("./profiletype1.png")} style={styles.profileTypeImage} />
             <View>
               <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
               <Text style={styles.profileTypeText}>SEPARATE PROFILE</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.profileTypeBox, petGuardianSelected && styles.selectedProfileTypeBox]} onPress={handlePetGuardianPress}>
-            <Image source={require("./pettopia_profile_right.png")} style={styles.profileTypeImage} />
+            <Image source={require("./profiletype2.png")} style={styles.profileTypeImage} />
             <View>
               <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
               <Text style={styles.profileTypeText}>COMBINED PROFILES</Text>
