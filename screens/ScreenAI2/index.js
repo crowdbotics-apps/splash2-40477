@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableWithoutFeedback, ScrollView, Pressable, Dimensions } from "react-native";
+const {
+  width,
+  height
+} = Dimensions.get("window");
 
 const PetProfileScreen = () => {
   const navigation = useNavigation();
@@ -17,53 +21,61 @@ const PetProfileScreen = () => {
     setPetParentSelected(false);
   };
 
-  return <ScrollView style={styles.container}>
+  return <View style={styles.container}>
       <View style={styles.header}>
         <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
-      <View style={styles.content}>
-        <Text style={styles.title}>Hi there</Text>
-        <Text style={styles.subtitle}>
-          Let’s start off by choosing what type of profile you want to create
-        </Text>
-        <View style={styles.profileTypeContainer}>
-          <TouchableOpacity style={[styles.profileTypeBox, petParentSelected && styles.selectedProfileTypeBox]} onPress={handlePetParentPress}>
-            <Image source={require("./pettopia_profile_left.png")} style={styles.profileTypeImage} />
-            <View>
-              <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
-              <Text style={styles.profileTypeText}>PET PARENT</Text>
-            </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.content}>
+          <Text style={styles.title}>Hi there!</Text>
+          <Text style={styles.subtitle}>
+            Let’s start off by choosing what type of profile you want to create
+          </Text>
+        </View>
+
+        <View style={styles.petInfoContainer}>
+          <View style={styles.profileTypeContainer}>
+            <TouchableWithoutFeedback onPress={handlePetParentPress}>
+              <View style={styles.profileTypeBox}>
+                <Image source={require("./pettopia_profile_left.png")} style={styles.profileTypeImage} />
+                <View style={[styles.profileTypeBoxLabel, petParentSelected && styles.selectedProfileTypeBox]}>
+                  <Text style={styles.profileTypeText}>PET PARENT</Text>
+                  <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
+                </View>
+              </View>
+            </TouchableWithoutFeedback>
+
+            <TouchableWithoutFeedback onPress={handlePetGuardianPress}>
+              <View style={styles.profileTypeBox}>
+                <Image source={require("./pettopia_profile_right.png")} style={styles.profileTypeImage} />
+                <View style={[styles.profileTypeBoxLabel, petGuardianSelected && styles.selectedProfileTypeBox]}>
+                  <Text style={styles.profileTypeText}>PET ADMIRER</Text>
+                  <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
+                </View>
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+          <Text style={styles.description}>
+            Your furry (or furless) child(ren) has your heart and you’re creating
+            this profile on their behalf
+          </Text>
+          <Text style={styles.funFact}>
+            Fun fact: You’ll be able to create a profile for most types of pets
+          </Text>
+        </View>
+
+        <View style={styles.footer}>
+          <TouchableOpacity style={[styles.button, styles.marginLeft]}>
+            <Image source={require("./left_arrow.png")} style={styles.buttonIcon} />
+            <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.profileTypeBox, petGuardianSelected && styles.selectedProfileTypeBox]} onPress={handlePetGuardianPress}>
-            <Image source={require("./pettopia_profile_right.png")} style={styles.profileTypeImage} />
-            <View>
-              <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
-              <Text style={styles.profileTypeText}>PET ADMIRER</Text>
-            </View>
+          <TouchableOpacity style={[styles.buttonRight, styles.marginRight]}>
+            <Text style={styles.buttonTextRight}>Next</Text>
+            <Image source={require("./right_arrow.png")} style={styles.buttonIcon} />
           </TouchableOpacity>
         </View>
-        <Text style={styles.description}>
-          Your furry (or furless) child(ren) has your heart and you’re creating
-          this profile on their behalf
-        </Text>
-        <Text style={styles.funFact}>
-          Fun fact: You’ll be able to create a profile for most types of pets
-        </Text>
-      </View>
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.button}>
-          <Image source={require("./left_arrow.png")} style={styles.buttonIconLeft} />
-          <Text style={styles.buttonText}>Back</Text>
-        </TouchableOpacity>
-        <Pressable style={styles.button} onPress={() => {
-        navigation.navigate("ScreenAI3");
-      }}>
-          <Text style={styles.buttonText}>Next</Text>
-          <Image source={require("./right_arrow.png")} style={styles.buttonIconRight} />
-        </Pressable>
-      </View>
-      <View style={styles.bottomLine} />
-    </ScrollView>;
+      </ScrollView>
+    </View>;
 };
 
 const styles = StyleSheet.create({
@@ -72,126 +84,139 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF"
   },
   header: {
-    height: 80,
+    height: height * 0.1,
     backgroundColor: "#FFFFFF",
     alignItems: "center",
     justifyContent: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: "#ccc"
+    borderBottomWidth: 2,
+    borderBottomColor: "#F3F3F3"
   },
   logo: {
-    width: 180,
-    height: 45
+    width: height * 0.32,
+    height: height * 0.06,
   },
   content: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 20
+    paddingHorizontal: width * 0.18,
+    paddingTop: height * 0.01,
   },
   title: {
-    fontSize: 24,
+    fontSize: width * 0.072,
     fontWeight: "bold",
-    marginBottom: 10,
+    color: "#3E3D40",
     textAlign: "center"
   },
   subtitle: {
-    fontSize: 16,
-    marginBottom: 38,
+    fontSize: width * 0.032,
     textAlign: "center",
-    marginTop: 14
+    fontWeight: "bold",
+    color: "#3E3D40",
+    paddingTop: height * 0.016,
+  },
+  petInfoContainer: {
+    width: "100%",
+    paddingHorizontal: width * 0.04,
+    marginTop: height * 0.024,
   },
   profileTypeContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 20,
-    width: 316,
-    height: 270
   },
   profileTypeBox: {
-    width: "48%",
-    height: 320,
-    backgroundColor: "#F2F2F2",
-    borderRadius: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 32
+    backgroundColor: "cyan",
+    borderRadius: width * 0.04,
+    justifyContent: "flex-end",
   },
   selectedProfileTypeBox: {
     backgroundColor: "#F5B56D",
     color: "#fff"
   },
   profileTypeImage: {
-    width: 150,
-    height: 240,
-    borderRadius: 10,
-    marginTop: -68
+    width: width * 0.44,
+    height: height * 0.5,
+    borderRadius: width * 0.04,
+  },
+  profileTypeBoxLabel: {
+    width: "100%",
+    backgroundColor: "#F2F2F2",
+    borderRadius: width * 0.04,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    paddingVertical: height * 0.028,
   },
   profileTypeText: {
-    fontSize: 16,
-    fontWeight: "bold"
+    fontSize: width * 0.032,
+    color: "#3E3D40",
+    fontWeight: "bold",
   },
   pawImage: {
+    marginTop: height * 0.016,
     height: 24,
     width: 28,
-    marginLeft: 34,
-    marginBottom: 12,
-    marginTop: 32
   },
   description: {
-    fontSize: 16,
+    fontSize: width * 0.032,
     fontWeight: "bold",
-    marginBottom: 10,
-    marginTop: 90,
+    color: "#3E3D40",
+    marginTop: height * 0.032,
     textAlign: "center"
   },
   funFact: {
-    fontSize: 14,
+    fontSize: width * 0.032,
+    color: "#797979",
     fontStyle: "italic",
-    marginBottom: 20,
-    marginTop: 24,
+    marginTop: height * 0.024,
     textAlign: "center"
   },
   footer: {
-    height: 60,
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 20
+    width: "100%",
+    height: height * 0.048,
+    marginTop: height * 0.024,
+    // paddingHorizontal: width * 0.04
   },
   button: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    marginLeft: 10,
-    width: 130,
-    textAlign: "center",
     backgroundColor: "#22B9B0",
-    padding: 12,
-    borderRadius: 12
+    borderRadius: width * 0.02,
+    height: height * 0.048,
+    width: width * 0.44,
+    paddingHorizontal: width * 0.04
+  },
+  buttonRight: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    backgroundColor: "#22B9B0",
+    borderRadius: width * 0.02,
+    height: height * 0.048,
+    width: width * 0.44,
+    paddingHorizontal: width * 0.04
+  },
+  marginLeft: {
+    marginLeft: width * 0.04,
+  },
+  marginRight: {
+    marginRight: width * 0.04,
   },
   buttonText: {
     color: "#FFFFFF",
-    fontSize: 14,
+    fontSize: width * 0.032,
     fontWeight: "bold",
-    marginHorizontal: 10
+    marginLeft: width * 0.1
   },
-  buttonIconLeft: {
-    width: 14,
-    height: 14,
-    position: "absolute",
-    left: 12,
-    top: 14
+  buttonTextRight: {
+    color: "#FFFFFF",
+    fontSize: width * 0.032,
+    fontWeight: "bold",
+    marginRight: width * 0.1
   },
-  buttonIconRight: {
-    width: 14,
-    height: 14,
-    position: "absolute",
-    left: 104
+  buttonIcon: {
+    width: height * 0.024,
+    height: height * 0.024,
   },
-  bottomLine: {
-    height: 1,
-    backgroundColor: "#E5E5E5"
-  }
 });
 export default PetProfileScreen;
