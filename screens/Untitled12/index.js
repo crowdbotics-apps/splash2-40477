@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, Image, StyleSheet, TouchableOpacity, TextInput, Picker, ScrollView, Pressable } from "react-native";
 
@@ -22,15 +22,15 @@ const UserInfo = () => {
       <View style={styles.basicPetInfo}>
         <Text style={styles.basicPetInfoTitle}>Your Basic Info</Text>
         <Text style={styles.basicPetInfoSubtitle}>
-          We’ll just need a bit of information about you.
-          This won’t be displayed on your profile
+          We’ll just need a bit of information about you. This won’t be
+          displayed on your profile
         </Text>
         <View style={styles.form}>
           <View style={styles.formField}>
             <Text style={styles.formLabel}>What is your first name? *</Text>
             <TextInput style={styles.formInput} placeholder="First Name" value={firstName} onChangeText={setFirstName} />
           </View>
-         <View style={styles.formField}>
+          <View style={styles.formField}>
             <Text style={styles.formLabel}>What is your last name? *</Text>
             <TextInput style={styles.formInput} placeholder="First Name" value={lastName} onChangeText={setLastName} />
           </View>
@@ -40,7 +40,9 @@ const UserInfo = () => {
             </Text>
           </View>
           <View style={styles.formField}>
-            <Text style={styles.formLabel}>What country do you reside in? *</Text>
+            <Text style={styles.formLabel}>
+              What country do you reside in? *
+            </Text>
             <Picker style={styles.formInput} selectedValue={petBreed} onValueChange={setPetBreed}>
               <Picker.Item label="Country" value="Country" />
             </Picker>
@@ -55,7 +57,10 @@ const UserInfo = () => {
             </Picker>
           </View>
           <View style={styles.formField}>
-            <Text style={styles.formLabel}>What type of content do prefer to see? We’ll ensure we prioritize these suggestions</Text>
+            <Text style={styles.formLabel}>
+              What type of content do prefer to see? We’ll ensure we prioritize
+              these suggestions
+            </Text>
             <Picker style={styles.formInput} selectedValue={petGender} onValueChange={setPetGender}>
               <Picker.Item label="german shepard" value="german shepard" />
               <Picker.Item label="siamese" value="siamese" />

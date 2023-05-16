@@ -1,4 +1,4 @@
-import { useNavigation } from "@react-navigation/native";
+import React, { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable } from "react-native";
 
 const TermsAndConditionsScreen = () => {
