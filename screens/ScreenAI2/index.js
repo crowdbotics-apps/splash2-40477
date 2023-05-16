@@ -21,6 +21,7 @@ const PetProfileScreen = () => {
     setPetParentSelected(false);
   };
 
+  const disableNextButton = !petParentSelected && !petGuardianSelected;
   return <View style={styles.container}>
       <View style={styles.header}>
         <Image source={require("./pettopia_logo.png")} style={styles.logo} />
@@ -69,7 +70,13 @@ const PetProfileScreen = () => {
             <Image source={require("./left_arrow.png")} style={styles.buttonIcon} />
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.buttonRight, styles.marginRight]}>
+          <TouchableOpacity
+            style={[styles.buttonRight, styles.marginRight, disableNextButton && styles.disabledButton]}
+            disabled={disableNextButton}
+            onPress={() => {
+              navigation.navigate("ScreenAI3")
+            }}
+          >
             <Text style={styles.buttonTextRight}>Next</Text>
             <Image source={require("./right_arrow.png")} style={styles.buttonIcon} />
           </TouchableOpacity>
@@ -195,6 +202,9 @@ const styles = StyleSheet.create({
     height: height * 0.048,
     width: width * 0.44,
     paddingHorizontal: width * 0.04
+  },
+  disabledButton: {
+    opacity: 0.5
   },
   marginLeft: {
     marginLeft: width * 0.04,
