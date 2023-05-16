@@ -48,17 +48,13 @@ const TermsAndConditionsScreen = () => {
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.backButton}>
             <Text style={styles.backButtonText}>Back</Text>
-            <Image source={{
-            uri: "https://tinyurl.com/42evm3m3"
-          }} style={styles.arrowIcon} />
+            <Image source={require("./left_arrow.png")} style={styles.arrowIcon} />
           </TouchableOpacity>
           <Pressable style={styles.nextButton} onPress={() => {
           navigation.navigate("Untitled12");
         }}>
             <Text style={styles.nextButtonText}>Next</Text>
-            <Image source={{
-            uri: "https://tinyurl.com/42evm3m3"
-          }} style={styles.arrowIcon} />
+            <Image source={require("./right_arrow.png")} style={styles.arrowIcon} />
           </Pressable>
         </View>
       </View>
