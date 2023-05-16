@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Picker, ScrollView, Pressable } from "react-native";
 
 const SnackTimeScreen = ({
