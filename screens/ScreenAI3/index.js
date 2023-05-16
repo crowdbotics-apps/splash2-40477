@@ -98,8 +98,7 @@ const styles = StyleSheet.create({
   optionsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    height: 250,
-    gap: 10
+    height: 250
   },
   option: {
     width: 100,
