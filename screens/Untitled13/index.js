@@ -71,16 +71,12 @@ const PettopiaScreen = () => {
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.backButton}>
-          <Image source={{
-          uri: "https://tinyurl.com/4j5j8z6r"
-        }} style={styles.arrow} />
+          <Image source={require("./left_arrow.png")} style={styles.arrow} />
           <Text style={styles.backText}>Back</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.nextButton}>
           <Text style={styles.nextText}>Next</Text>
-          <Image source={{
-          uri: "https://tinyurl.com/4j5j8z6r"
-        }} style={styles.arrow} />
+          <Image source={require("./right_arrow.png")} style={styles.arrow} />
         </TouchableOpacity>
       </View>
       <View style={styles.line} />
