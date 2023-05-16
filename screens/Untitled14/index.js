@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable } from "react-native";
 
@@ -24,7 +24,8 @@ const ProfileTypeScreen = () => {
       <View style={styles.content}>
         <Text style={styles.title}>Profile Type</Text>
         <Text style={styles.subtitle}>
-          Would you like to create a separate profile for each pet or combine them on a single profile?
+          Would you like to create a separate profile for each pet or combine
+          them on a single profile?
         </Text>
         <View style={styles.profileTypeContainer}>
           <TouchableOpacity style={[styles.profileTypeBox, petParentSelected && styles.selectedProfileTypeBox]} onPress={handlePetParentPress}>
@@ -43,10 +44,13 @@ const ProfileTypeScreen = () => {
           </TouchableOpacity>
         </View>
         <Text style={styles.description}>
-        You'd prefer your pets to share a profile so that it's easier for you to maintain.  This will allow you to post content for all of your pets under a single profile.
+          You'd prefer your pets to share a profile so that it's easier for you
+          to maintain. This will allow you to post content for all of your pets
+          under a single profile.
         </Text>
         <Text style={styles.funFact}>
-      Fun fact: You'll be able to create additional profiles afterwards, as desired.
+          Fun fact: You'll be able to create additional profiles afterwards, as
+          desired.
         </Text>
       </View>
       <View style={styles.footer}>
