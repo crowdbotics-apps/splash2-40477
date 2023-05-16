@@ -8,7 +8,7 @@ const {
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
-  return <ScrollView style={styles.NIyTbkFC}>
+  return <ScrollView style={styles.NIyTbkFC} showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
           <Image source={require("./pettopia_logo.png")} style={styles.logo} />
 
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: width * 0.072,
     fontWeight: 'bold',
-    color: "#333"
+    color: "#3E3D40"
   },
   textContainer: {
     marginTop: height * 0.008,
@@ -96,11 +96,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   funFactContainer: {
-    marginTop: 20
+    marginTop: height * 0.016,
   },
   funFact: {
-    fontSize: 16,
-    color: "#999",
+    fontSize: height * 0.02,
+    color: "#797979",
     width: 317,
     height: 55,
     textAlign: "center"
