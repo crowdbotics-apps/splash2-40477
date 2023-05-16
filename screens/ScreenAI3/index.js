@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   ScrollView
 } from "react-native"
 const { width, height } = Dimensions.get("window")
@@ -36,69 +37,66 @@ const PetProfileScreen = () => {
         </View>
 
         <View style={styles.optionsContainer}>
-          <TouchableOpacity
-            style={styles.option}
-            onPress={() => handleSelection("one")}
-          >
-            <Image
-              source={require("./pet_qtde_column_1.png")}
-              style={styles.petImage}
-            />
-            <View
-              style={[
-                styles.profileTypeBoxLabel,
-                selected === "one" && styles.selectedOption
-              ]}
-            >
-              <Text style={styles.optionText}>ONE PET</Text>
+          <TouchableWithoutFeedback onPress={() => handleSelection("one")}>
+            <View style={styles.option}>
               <Image
-                source={require("./paw_icon_unselected.png")}
-                style={styles.pawImage}
+                source={require("./pet_qtde_column_1.png")}
+                style={styles.petImage}
               />
+              <View
+                style={[
+                  styles.profileTypeBoxLabel,
+                  selected === "one" && styles.selectedOption
+                ]}
+              >
+                <Text style={styles.optionText}>ONE PET</Text>
+                <Image
+                  source={require("./paw_icon_unselected.png")}
+                  style={styles.pawImage}
+                />
+              </View>
             </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.option}
-            onPress={() => handleSelection("two")}
-          >
-            <Image
-              source={require("./pet_image_col_2.png")}
-              style={styles.petImage}
-            />
-            <View
-              style={[
-                styles.profileTypeBoxLabel,
-                selected === "two" && styles.selectedOption
-              ]}
-            >
-              <Text style={styles.optionText}>TWO PETS</Text>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={() => handleSelection("two")}>
+            <View style={styles.option}>
               <Image
-                source={require("./paw_icon_unselected.png")}
-                style={styles.pawImage}
+                source={require("./pet_image_col_2.png")}
+                style={styles.petImage}
               />
+              <View
+                style={[
+                  styles.profileTypeBoxLabel,
+                  selected === "two" && styles.selectedOption
+                ]}
+              >
+                <Text style={styles.optionText}>TWO PETS</Text>
+                <Image
+                  source={require("./paw_icon_unselected.png")}
+                  style={styles.pawImage}
+                />
+              </View>
             </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.option}
-            onPress={() => handleSelection("three")}
-          >
-            <Image
-              source={require("./pet_image_col_3.png")}
-              style={styles.petImage}
-            />
-            <View
-              style={[
-                styles.profileTypeBoxLabel,
-                selected === "three" && styles.selectedOption
-              ]}
-            >
-              <Text style={styles.optionText}>THREE PETS</Text>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={() => handleSelection("three")}>
+            <View style={styles.option}>
               <Image
-                source={require("./paw_icon_unselected.png")}
-                style={styles.pawImage}
+                source={require("./pet_image_col_3.png")}
+                style={styles.petImage}
               />
+              <View
+                style={[
+                  styles.profileTypeBoxLabel,
+                  selected === "three" && styles.selectedOption
+                ]}
+              >
+                <Text style={styles.optionText}>THREE PETS</Text>
+                <Image
+                  source={require("./paw_icon_unselected.png")}
+                  style={styles.pawImage}
+                />
+              </View>
             </View>
-          </TouchableOpacity>
+          </TouchableWithoutFeedback>
         </View>
 
         <Text style={styles.selectedText}>
