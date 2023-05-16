@@ -10,9 +10,7 @@ const WelcomeScreen = () => {
   const navigation = useNavigation();
   return <ScrollView style={styles.NIyTbkFC}>
         <View style={styles.container}>
-          <View style={styles.logoContainer}>
-            <Image source={require("./pettopia_logo.png")} style={styles.logo} />
-          </View>
+          <Image source={require("./pettopia_logo.png")} style={styles.logo} />
 
           <View style={styles.imageContainer}>
             <Image source={require("./pettopia_dog_image.png")} style={styles.image} />
@@ -51,49 +49,46 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-  logoContainer: {
-    marginTop: height * 0.024 * 5,
-    width: "100%",
-    height: height * 0.024 * 5,
-    alignItems: "center"
-  },
   logo: {
-    width: height * 0.12 * 5,
-    height: height * 0.024 * 5
+    width: height * 0.32,
+    height: height * 0.06,
+    marginTop: height * 0.048
   },
   imageContainer: {
-    marginTop: height * 0.024 * 5
+    marginTop: height * 0.02
   },
   image: {
-    width: width * 0.12 * 5,
-    height: width * 0.16 * 5,
+    width: width * 0.9,
+    height: height * 0.6,
     borderRadius: width * 0.02 * 5
   },
   titleContainer: {
-    marginTop: height * 0.02 * 5,
+    marginTop: height * 0.02,
     width: "100%",
     alignItems: "center"
   },
   title: {
-    fontSize: width * 0.011 * 5,
+    fontSize: width * 0.072,
+    fontWeight: 'bold',
     color: "#333"
   },
   textContainer: {
-    marginTop: height * 0.012 * 5,
+    marginTop: height * 0.008,
     width: "100%",
-    paddingHorizontal: width * 0.02 * 5
+    paddingHorizontal: width * 0.2
   },
   text: {
-    fontSize: height * 0.01 * 5,
+    fontSize: height * 0.020,
     color: "#797979",
+    fontWeight: 'bold',
     textAlign: "center"
   },
   button: {
-    marginTop: 50,
+    marginTop: height * 0.016,
     backgroundColor: "#22B9B0",
     paddingVertical: 15,
     paddingHorizontal: 30,
-    borderRadius: 30
+    borderRadius: 10,
   },
   buttonText: {
     color: "#fff",
