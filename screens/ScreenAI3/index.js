@@ -1,6 +1,15 @@
-import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable, ScrollView } from "react-native";
+import React, { useState } from "react"
+import { useNavigation } from "@react-navigation/native"
+import {
+  Dimensions,
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ScrollView
+} from "react-native"
+const { width, height } = Dimensions.get("window")
 
 const PetProfileScreen = () => {
   const navigation = useNavigation();
@@ -10,33 +19,88 @@ const PetProfileScreen = () => {
     setSelected(option);
   };
 
-  return <ScrollView style={styles.container}>
+  const disableNextButton = selected === "";
+
+  return (
+    <View style={styles.container}>
       <View style={styles.header}>
         <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
-      <View style={styles.content}>
-        <Text style={styles.title}>Number of pets</Text>
-        <Text style={styles.subtitle}>
-          How many pets will you create profiles for? This will be important to
-          help you set up the profile properly
-        </Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.content}>
+          <Text style={styles.title}>Number of pets</Text>
+          <Text style={styles.subtitle}>
+            How many pets will you create profiles for? This will be important
+            to help you set up the profile properly
+          </Text>
+        </View>
+
         <View style={styles.optionsContainer}>
-          <TouchableOpacity style={[styles.option, selected === "one" && styles.selectedOption]} onPress={() => handleSelection("one")}>
-            <Image source={require("./pet_qtde_column_1.png")} style={styles.petImage} />
-            <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
-            <Text style={styles.optionText}>ONE PET</Text>
+          <TouchableOpacity
+            style={styles.option}
+            onPress={() => handleSelection("one")}
+          >
+            <Image
+              source={require("./pet_qtde_column_1.png")}
+              style={styles.petImage}
+            />
+            <View
+              style={[
+                styles.profileTypeBoxLabel,
+                selected === "one" && styles.selectedOption
+              ]}
+            >
+              <Text style={styles.optionText}>ONE PET</Text>
+              <Image
+                source={require("./paw_icon_unselected.png")}
+                style={styles.pawImage}
+              />
+            </View>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.option, selected === "two" && styles.selectedOption]} onPress={() => handleSelection("two")}>
-            <Image source={require("./pet_image_col_2.png")} style={styles.petImage} />
-            <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
-            <Text style={styles.optionText}>TWO PETS</Text>
+          <TouchableOpacity
+            style={styles.option}
+            onPress={() => handleSelection("two")}
+          >
+            <Image
+              source={require("./pet_image_col_2.png")}
+              style={styles.petImage}
+            />
+            <View
+              style={[
+                styles.profileTypeBoxLabel,
+                selected === "two" && styles.selectedOption
+              ]}
+            >
+              <Text style={styles.optionText}>TWO PETS</Text>
+              <Image
+                source={require("./paw_icon_unselected.png")}
+                style={styles.pawImage}
+              />
+            </View>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.option, selected === "three" && styles.selectedOption]} onPress={() => handleSelection("three")}>
-            <Image source={require("./pet_image_col_3.png")} style={styles.petImage} />
-            <Image source={require("./paw_icon_unselected.png")} style={styles.pawImage} />
-            <Text style={styles.optionText}>THREE PETS</Text>
+          <TouchableOpacity
+            style={styles.option}
+            onPress={() => handleSelection("three")}
+          >
+            <Image
+              source={require("./pet_image_col_3.png")}
+              style={styles.petImage}
+            />
+            <View
+              style={[
+                styles.profileTypeBoxLabel,
+                selected === "three" && styles.selectedOption
+              ]}
+            >
+              <Text style={styles.optionText}>THREE PETS</Text>
+              <Image
+                source={require("./paw_icon_unselected.png")}
+                style={styles.pawImage}
+              />
+            </View>
           </TouchableOpacity>
         </View>
+
         <Text style={styles.selectedText}>
           You have only one pet that you want to create a profile for.
         </Text>
@@ -44,20 +108,40 @@ const PetProfileScreen = () => {
           Fun fact: You'll be able to create additional profiles afterwards, as
           desired.
         </Text>
-        <View style={styles.footer}>
-          <TouchableOpacity style={styles.button}>
-            <Image source={require("./left_arrow.png")} style={styles.buttonIconLeft} />
-            <Text style={styles.buttonText}>Back</Text>
-          </TouchableOpacity>
-          <Pressable style={styles.button} onPress={() => {
-          navigation.navigate("Untitled14");
-        }}>
-            <Text style={styles.buttonText}>Next</Text>
-            <Image source={require("./right_arrow.png")} style={styles.buttonIconRight} />
-          </Pressable>
-        </View>
+      </ScrollView>
+      <View style={styles.footer}>
+        <TouchableOpacity
+          style={[styles.button, styles.marginLeft]}
+          onPress={() => {
+            navigation.pop()
+          }}
+        >
+          <Image
+            source={require("./left_arrow.png")}
+            style={styles.buttonIcon}
+          />
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[
+            styles.buttonRight,
+            styles.marginRight,
+            disableNextButton && styles.disabledButton
+          ]}
+          disabled={disableNextButton}
+          onPress={() => {
+            navigation.navigate("Untitled14");
+          }}
+        >
+          <Text style={styles.buttonTextRight}>Next</Text>
+          <Image
+            source={require("./right_arrow.png")}
+            style={styles.buttonIcon}
+          />
+        </TouchableOpacity>
       </View>
-    </ScrollView>;
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -66,118 +150,139 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   },
   header: {
-    height: 80,
-    backgroundColor: "#fff",
-    justifyContent: "center",
+    height: height * 0.1,
+    backgroundColor: "#FFFFFF",
     alignItems: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: "#ccc"
+    justifyContent: "center",
+    borderBottomWidth: 2,
+    borderBottomColor: "#F3F3F3"
   },
   logo: {
-    width: 180,
-    height: 45
+    width: height * 0.32,
+    height: height * 0.06,
   },
   content: {
     flex: 1,
-    padding: 20,
-    paddingTop: 40,
-    justifyContent: "center",
-    alignItems: "center"
+    paddingHorizontal: width * 0.18,
+    paddingTop: height * 0.01,
   },
   title: {
-    fontSize: 24,
+    fontSize: width * 0.072,
     fontWeight: "bold",
-    marginBottom: 20
+    color: "#3E3D40",
+    textAlign: "center"
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: width * 0.032,
     textAlign: "center",
-    marginBottom: 80,
-    paddingTop: 10
+    fontWeight: "bold",
+    color: "#3E3D40",
+    paddingTop: height * 0.016,
   },
   optionsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    height: 250
+    width: "100%",
+    paddingHorizontal: width * 0.04,
+    marginTop: height * 0.04
   },
   option: {
-    width: 100,
-    height: 200,
-    backgroundColor: "#f2f2f2",
-    borderRadius: 10,
+    backgroundColor: "cyan",
+    borderRadius: width * 0.04,
+    justifyContent: "flex-end",
+  },
+  profileTypeBoxLabel: {
+    width: "100%",
+    backgroundColor: "#F2F2F2",
+    borderRadius: width * 0.04,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    position: "absolute",
+    paddingVertical: height * 0.024,
   },
   pawImage: {
-    height: 24,
-    width: 28,
-    marginBottom: 12,
-    marginTop: 12
+    height: width * 0.07,
+    width: width * 0.08,
+    marginTop: height * 0.016
   },
   selectedOption: {
     backgroundColor: "#f5b56d"
   },
   petImage: {
-    width: "100%",
-    height: 150,
-    marginBottom: 10,
-    borderRadius: 10,
-    marginTop: -72
+    width: width * 0.29,
+    height: height * 0.32,
+    borderRadius: width * 0.04,
   },
   optionText: {
-    fontSize: 14,
+    fontSize: width * 0.032,
+    color: "#3E3D40",
     fontWeight: "bold",
-    textAlign: "center"
   },
   selectedText: {
-    fontSize: 16,
+    fontSize: width * 0.032,
     fontWeight: "bold",
-    marginBottom: 20,
+    color: "#3E3D40",
+    marginTop: height * 0.032,
     textAlign: "center"
   },
   funFact: {
-    fontSize: 14,
+    fontSize: width * 0.032,
+    color: "#797979",
     fontStyle: "italic",
-    textAlign: "center",
-    marginBottom: 20
+    marginTop: height * 0.024,
+    textAlign: "center"
   },
   footer: {
-    height: 60,
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 20,
-    width: "100%"
+    width: "100%",
+    alignSelf: "stretch",
+    marginTop: height * 0.024,
+    marginBottom: height * 0.024,
   },
   button: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    marginLeft: 10,
-    width: 130,
-    textAlign: "center",
     backgroundColor: "#22B9B0",
-    padding: 12,
-    borderRadius: 12
+    borderRadius: width * 0.02,
+    height: height * 0.048,
+    width: width * 0.44,
+    paddingHorizontal: width * 0.04
+  },
+  buttonRight: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    backgroundColor: "#22B9B0",
+    borderRadius: width * 0.02,
+    height: height * 0.048,
+    width: width * 0.44,
+    paddingHorizontal: width * 0.04
+  },
+  disabledButton: {
+    opacity: 0.5
+  },
+  marginLeft: {
+    marginLeft: width * 0.04,
+  },
+  marginRight: {
+    marginRight: width * 0.04,
   },
   buttonText: {
     color: "#FFFFFF",
-    fontSize: 14,
+    fontSize: width * 0.032,
     fontWeight: "bold",
-    marginHorizontal: 10
+    marginLeft: width * 0.1
   },
-  buttonIconLeft: {
-    width: 14,
-    height: 14,
-    position: "absolute",
-    left: 12,
-    top: 14
+  buttonTextRight: {
+    color: "#FFFFFF",
+    fontSize: width * 0.032,
+    fontWeight: "bold",
+    marginRight: width * 0.1
   },
-  buttonIconRight: {
-    width: 14,
-    height: 14,
-    position: "absolute",
-    left: 104
-  }
+  buttonIcon: {
+    width: height * 0.024,
+    height: height * 0.024,
+  },
 });
 export default PetProfileScreen;

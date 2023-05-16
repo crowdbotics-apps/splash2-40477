@@ -64,24 +64,28 @@ const PetProfileScreen = () => {
             Fun fact: You’ll be able to create a profile for most types of pets
           </Text>
         </View>
-
-        <View style={styles.footer}>
-          <TouchableOpacity style={[styles.button, styles.marginLeft]}>
-            <Image source={require("./left_arrow.png")} style={styles.buttonIcon} />
-            <Text style={styles.buttonText}>Back</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.buttonRight, styles.marginRight, disableNextButton && styles.disabledButton]}
-            disabled={disableNextButton}
-            onPress={() => {
-              navigation.navigate("ScreenAI3")
-            }}
-          >
-            <Text style={styles.buttonTextRight}>Next</Text>
-            <Image source={require("./right_arrow.png")} style={styles.buttonIcon} />
-          </TouchableOpacity>
-        </View>
       </ScrollView>
+      <View style={styles.footer}>
+        <TouchableOpacity
+          style={[styles.button, styles.marginLeft]}
+          onPress={() => {
+            navigation.pop()
+          }}
+        >
+          <Image source={require("./left_arrow.png")} style={styles.buttonIcon} />
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.buttonRight, styles.marginRight, disableNextButton && styles.disabledButton]}
+          disabled={disableNextButton}
+          onPress={() => {
+            navigation.navigate("ScreenAI3")
+          }}
+        >
+          <Text style={styles.buttonTextRight}>Next</Text>
+          <Image source={require("./right_arrow.png")} style={styles.buttonIcon} />
+        </TouchableOpacity>
+      </View>
     </View>;
 };
 
@@ -130,7 +134,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   profileTypeBox: {
-    backgroundColor: "cyan",
     borderRadius: width * 0.04,
     justifyContent: "flex-end",
   },
@@ -159,8 +162,8 @@ const styles = StyleSheet.create({
   },
   pawImage: {
     marginTop: height * 0.016,
-    height: 24,
-    width: 28,
+    height: width * 0.07,
+    width: width * 0.08,
   },
   description: {
     fontSize: width * 0.032,
@@ -181,8 +184,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     width: "100%",
     height: height * 0.048,
-    marginTop: height * 0.024,
-    // paddingHorizontal: width * 0.04
+    marginBottom: height * 0.024,
   },
   button: {
     flexDirection: "row",
