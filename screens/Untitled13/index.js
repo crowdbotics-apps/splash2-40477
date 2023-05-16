@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, ScrollView } from "react-native";
 
 const PettopiaScreen = () => {
-  return <View style={styles.container}>
+  return <ScrollView style={styles.container}>
       <View style={styles.logoContainer}>
         <Image source={require("./pettopia_logo.png")} style={styles.logo} />
       </View>
@@ -84,7 +84,7 @@ const PettopiaScreen = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.line} />
-    </View>;
+    </ScrollView>;
 };
 
 const styles = StyleSheet.create({
