@@ -1,5 +1,5 @@
 import React, { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable, ScrollView } from "react-native";
 
 const TermsAndConditionsScreen = () => {
   const navigation = useNavigation();
